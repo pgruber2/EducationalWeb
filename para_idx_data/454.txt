@@ -1,0 +1,1 @@
+Suppose that a hospital tested the age and body fat data for 18 randomly selected adults with the following results: (c) Draw a scatter plot and a q-q plot based on these two variables. 

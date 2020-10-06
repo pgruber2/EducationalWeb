@@ -1,0 +1,1 @@
+In the introduction to this chapter, we noted that combining content-based filtering and collaborative filtering could yield an optimal recommender application. Suggest some ways to combine these two methods, explaining your intuition. 

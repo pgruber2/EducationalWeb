@@ -1,0 +1,1 @@
+and showed that this scoring function scores a document based on the number of distinct query words matched in it. We also showed that such a simple vector space model still doesn't work well, and we need to improve it. This is the topic for the next section. 

@@ -1,0 +1,121 @@
+ <!-- slide.html-->
+
+{% extends "base.html" %}
+
+{% block body %}
+<!-- <script type=text/javascript> -->
+  <!-- $SCRIPT_ROOT = {{ request.script_root|tojson|safe }}; -->
+<!-- </script> -->
+
+<script>
+/// $(document).ready(function() {
+//   $.ajaxSetup({ cache: false,async: false, });
+// });
+// });
+window.addEventListener( "pageshow", function ( event ) {
+  var historyTraversal = event.persisted || 
+                         ( typeof window.performance != "undefined" && 
+                              window.performance.navigation.type === 2 );
+  if ( historyTraversal ) {
+    // Synchronous ajax request are deprecated so using navigator send beacon
+    // $.getJSON($SCRIPT_ROOT + '/webofslides/log_action', {
+    //     action: 'back_forward',
+    //     route: window.location.pathname
+    //   });
+    logdata = JSON.stringify({
+      action: 'search_cache_open',
+      route: window.location.pathname
+    });
+    navigator.sendBeacon('/webofslides/log_action', logdata);
+  }
+  else{
+    logdata = JSON.stringify({
+      action: 'search_open',
+      route: window.location.pathname
+    });
+    navigator.sendBeacon('/webofslides/log_action', logdata);
+  }
+});
+window.addEventListener("beforeunload", function(event) { 
+    logdata = JSON.stringify({
+      action: 'search_close',
+      route: window.location.pathname
+    });
+    navigator.sendBeacon('/webofslides/log_action', logdata);
+  
+});
+
+var hidden, visibilityChange; 
+if (typeof document.hidden !== "undefined") { // Opera 12.10 and Firefox 18 and later support 
+  hidden = "hidden";
+  visibilityChange = "visibilitychange";
+} else if (typeof document.msHidden !== "undefined") {
+  hidden = "msHidden";
+  visibilityChange = "msvisibilitychange";
+} else if (typeof document.webkitHidden !== "undefined") {
+  hidden = "webkitHidden";
+  visibilityChange = "webkitvisibilitychange";
+}
+ 
+
+function handleVisibilityChange() {
+  if (document[hidden]) {
+      logdata = JSON.stringify({
+      action: 'search_hide',
+      route: window.location.pathname
+    });
+    navigator.sendBeacon('/webofslides/log_action', logdata);
+  }
+   else {
+      logdata = JSON.stringify({
+      action: 'search_unhide',
+      route: window.location.pathname
+    });
+    navigator.sendBeacon('/webofslides/log_action', logdata);
+  }
+
+}
+
+// Warn if the browser doesn't support addEventListener or the Page Visibility API
+if (typeof document.addEventListener === "undefined" || hidden === undefined) {
+  console.log("requires a browser, such as Google Chrome or Firefox, that supports the Page Visibility API.");
+} else {
+  // Handle page visibility change   
+  document.addEventListener(visibilityChange, handleVisibilityChange, false);
+  }                   
+window.addEventListener("DOMContentLoaded", function(event) {
+var resLinks = document.getElementsByClassName("search_res");
+
+var resLog = function(idx) {
+    logdata = JSON.stringify({
+      action: 'search_res_'+idx,
+      route: window.location.pathname
+    });
+    navigator.sendBeacon('/webofslides/log_action', logdata);
+};
+
+for (var i = 0; i < resLinks.length; i++) {
+    resLinks[i].addEventListener('click', function(){
+    resLog(this.id);
+} , false);
+}
+});
+
+</script>
+
+<div class="jumbotron" padding-bottom="15px">
+  <div class="container" style="margin-left:0px;padding-left:0px" >
+ 
+  <h2>Results</h2>
+   <ul>
+  {% for i in range(num_results) %}
+  	<li><a id="{{i}}" class="search_res" href="/webofslides/search_slide/{{search_course_names[i]}}/{{lnos[i]}}/{{results[i]}}">{{disp_strs[i]}}</a>
+  	<br>
+	{{snippets[i]}}</li>
+	{% endfor %}
+  </ul>
+</div>
+  </div>
+</div>
+
+{% endblock %}

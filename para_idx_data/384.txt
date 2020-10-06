@@ -1,0 +1,1 @@
+A common method for estimating θ F is the maximum likelihood (ML) estimator, in which we choose a θ F that maximizes the likelihood of F . That is, the estimated topic model (denoted byθ F ) is given bŷ 

@@ -1,0 +1,1 @@
+I(X eats ; X meats ) = I(X meats ; X eats ) > I(X eats ; X the ) = I(X the ; X eats ) I(X eats ; X eats ) = H(X eats ) ≥ I(X eats ; X w ) Whenever "eats" occurs, what other words also tend to occur? Which words have high mutual information with "eats"?  

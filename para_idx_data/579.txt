@@ -1,0 +1,1 @@
+These are nearly identical patterns that a time series appears to follow during corresponding seasons of successive years such as holiday shopping seasons. For effective trend analysis, the data often need to be "deseasonalized" based on a seasonal index computed by autocorrelation. 

@@ -1,0 +1,1 @@
+Here, we examine Bayesian statistics in more depth as a continuation of Chapter 2 and Chapter 17. 

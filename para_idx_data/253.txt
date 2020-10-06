@@ -1,0 +1,1 @@
+In this section, we introduce two advanced methods for term clustering. 

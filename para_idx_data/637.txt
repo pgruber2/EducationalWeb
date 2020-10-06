@@ -1,0 +1,1 @@
+Propose a few implementation methods for audio data mining. Can we integrate audio and visual data mining to bring fun and power to data mining? Is it possible to develop some video data mining methods? State some scenarios and your solutions to make such integrated audiovisual mining effective. 

@@ -1,0 +1,1 @@
+Outline a method to determine synonyms based on search engine logs. That is, you are given many queries, and for each query is a list of clicked (assumed relevant) documents. 

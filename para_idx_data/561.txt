@@ -1,0 +1,1 @@
+If there is a must-link constraint on objects x and y, but they are assigned to two different centers, c 1 and c 2 , respectively, then the constraint is violated. As a result, dist(c 1 , c 2 ), the distance between c 1 and c 2 , is added to the objective function as the penalty. 

@@ -1,0 +1,1 @@
+D = {o 1 , . . . , o n }: a data set containing n objects; Output: A hierarchy of clusters. 

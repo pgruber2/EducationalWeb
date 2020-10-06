@@ -1,0 +1,292 @@
+<!-- slide.html-->
+{% extends "base.html" %}
+{% block nav %}
+<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Lectures <span class="caret"></span></a>
+         <ul class="dropdown-menu" style="height:auto; max-width: 850px; left:-225px; max-height:  100vh; overflow:scroll;opacity:0.97;background-color: #E8E8E8;">
+{% for i in lnos %}
+            <li><a href="{{base_url}}/slide/{{course_name}}/{{i}}">{{' '.join(lec_names[i].replace('.txt','').replace('_','-').split('-')).title()}}</a></li>
+             {% endfor %}
+          </ul>
+        </li>
+           
+{% endblock %}
+
+{% block body %}
+<!-- <script type=text/javascript> -->
+  <!-- $SCRIPT_ROOT = {{ request.script_root|tojson|safe }}; -->
+<!-- </script> -->
+
+<script>
+// $(document).ready(function() {
+//   $.ajaxSetup({ cache: false,async: false, });
+// });
+// });
+// var pdfjsLib = require("pdf.js/build/generic/build/pdf.js");
+
+
+window.addEventListener( "pageshow", function ( event ) {
+// ie compatibility
+
+
+  var historyTraversal = event.persisted || 
+                         ( typeof window.performance != "undefined" && 
+                              window.performance.navigation.type === 2 );
+  if ( historyTraversal ) {
+    // Synchronous ajax request are deprecated so using navigator send beacon
+    // $.getJSON($SCRIPT_ROOT + '/webofslides/log_action', {
+    //     action: 'back_forward',
+    //     route: window.location.pathname
+    //   });
+    logdata = JSON.stringify({
+      action: 'cache_open',
+      route: window.location.pathname
+    });
+    navigator.sendBeacon('{{base_url}}/log_action', logdata);
+  }
+  else{
+    logdata = JSON.stringify({
+      action: 'open',
+      route: window.location.pathname
+    });
+    navigator.sendBeacon('{{base_url}}/log_action', logdata);
+  }
+});
+window.addEventListener("beforeunload", function(event) { 
+    logdata = JSON.stringify({
+      action: 'close',
+      route: window.location.pathname
+    });
+    navigator.sendBeacon('{{base_url}}/log_action', logdata);
+  
+});
+
+var hidden, visibilityChange; 
+if (typeof document.hidden !== "undefined") { // Opera 12.10 and Firefox 18 and later support 
+  hidden = "hidden";
+  visibilityChange = "visibilitychange";
+} else if (typeof document.msHidden !== "undefined") {
+  hidden = "msHidden";
+  visibilityChange = "msvisibilitychange";
+} else if (typeof document.webkitHidden !== "undefined") {
+  hidden = "webkitHidden";
+  visibilityChange = "webkitvisibilitychange";
+}
+ 
+
+function handleVisibilityChange() {
+  console.log(document['hidden'])
+  if (document[hidden]) {
+      logdata = JSON.stringify({
+      action: 'hide',
+      route: window.location.pathname
+    });
+    navigator.sendBeacon('{{base_url}}/log_action', logdata);
+  }
+   else {
+      logdata = JSON.stringify({
+      action: 'unhide',
+      route: window.location.pathname
+    });
+    navigator.sendBeacon('{{base_url}}/log_action', logdata);
+  }
+
+}
+
+// Warn if the browser doesn't support addEventListener or the Page Visibility API
+if (typeof document.addEventListener === "undefined" || hidden === undefined) {
+  console.log("requires a browser, such as Google Chrome or Firefox, that supports the Page Visibility API.");
+} else {
+  // Handle page visibility change   
+  document.addEventListener(visibilityChange, handleVisibilityChange, false);
+  }                   
+
+window.addEventListener("DOMContentLoaded", function(event) {
+var relLinks = document.getElementsByClassName("related");
+
+var relLog = function(idx) {
+  console.log('related')
+    logdata = JSON.stringify({
+      action: 'related_'+idx,
+      route: window.location.pathname
+    });
+    navigator.sendBeacon('{{base_url}}/log_action', logdata);
+};
+
+for (var i = 0; i < relLinks.length; i++) {
+    ['click','contextmenu'].forEach(function(e){relLinks[i].addEventListener(e, function(){
+    relLog(this.id);
+} , true);})
+}
+
+
+
+document.getElementById("next").addEventListener('click',function(){  logdata = JSON.stringify({
+      action: 'next',
+      route: window.location.pathname
+    });
+  console.log('next')
+    navigator.sendBeacon('{{base_url}}/log_action', logdata);},true)
+
+
+
+document.getElementById("prev").addEventListener('click',function(){  logdata = JSON.stringify({
+      action: 'prev',
+      route: window.location.pathname
+    });
+
+    navigator.sendBeacon('{{base_url}}/log_action', logdata);},true)
+
+
+})
+$(function() {
+  $('[data-toggle="popover"]').popover({
+    placement:function (context, source) {
+
+        var position = $(source).offset();
+      console.log(position)
+
+      
+        if (position.top < 400){
+            return "bottom";
+        }
+
+        return "top"},
+      container: 'body',
+    trigger : 'hover',
+    html: true
+    
+
+  });
+});
+
+
+$(function() {
+          $('#submit').bind('click', function() {
+            var srch = document.getElementById('srch-term').value 
+           $.ajax({
+    type: "POST",
+    url:"{{base_url}}/search_slides",
+    contentType: "application/json;charset=utf-8",
+    data: JSON.stringify({ 'searchString':  srch ,'route':window.location.pathname}),
+
+    success: function(data){
+      result_section = document.getElementById('result');
+      while (result_section.firstChild) {
+            result_section.removeChild(result_section.firstChild);
+        }
+      h = document.createElement('h2');
+      var searchLog = function(idx) {
+          logdata = JSON.stringify({
+            action: 'search_res_'+idx,
+            route: window.location.pathname
+          });
+          navigator.sendBeacon('{{base_url}}/log_action', logdata);
+      }; 
+      h.innerHTML = 'Search Results';
+      result_section.appendChild(h);
+      for(i=0;i<data['num_results'];i++){
+        a = document.createElement('a');
+        a.setAttribute('href','{{base_url}}/search_slide/'+data['search_course_names'][i]+'/'+data['lnos'][i]+'/'+data['results'][i]);
+        // a.innerHTML = 'Test';
+        a.innerHTML = data['disp_strs'][i]
+        a.setAttribute('id','search_'+i)
+        a.setAttribute('class','search_res');
+        ['click','contextmenu'].forEach(function(e){a.addEventListener(e, function(){
+          searchLog(this.id);
+      } , true);})
+
+        result_section.appendChild(a);
+       
+
+        $('#search_'+i).popover({
+          container: 'body',
+          trigger : 'hover',
+          html: true,
+          placement:'top',
+          title:"<embed type='application/pdf' id='search_slide' src={{pdf_url}}/static/slides/"+data['search_course_names'][i]+'/'+data['lec_names'][i]+'/'+data['results'][i] +"#toolbar=0&navpanes=0&scrollbar=0>"
+          
+        })
+        
+
+        b = document.createElement('br');
+        result_section.appendChild(b);
+        p = document.createElement('p');
+        // p.innerHTML = 'test2';
+        p.innerHTML = data['snippets'][i];
+        result_section.appendChild(p);
+      }
+    },
+    failure: function() {
+        alert('Error searching');
+    }
+});
+          })
+        })
+
+
+ </script>
+
+
+    
+ <div class="container-fluid main_cnt">
+  <div id="explanation-container" class="col-sm-12">
+     <div id="docs-div" class="col-md-12 mx-auto"></div>
+      <br style="clear: both;">
+      <div>
+      <button type="button" class="btn btn-success pull-left" id="helpfulButton">Helpful</button>
+      <button type="button" class="btn btn-danger pull-right" id="notHelpfulButton">Not Helpful</button>
+    </div>
+    </div>
+<div class="row main_row" >
+<div class="col-sm-12 main"> 
+  <h2>{{' '.join(course_name.split('-')).title()}}</h2>
+  <p>{{slide_name.split('----')[-1][:-4].title()}}</p>
+    <div style="overflow:auto;-webkit-overflow-scrolling:touch">
+  <iframe id='main_slide' type='application/pdf' src="{{pdf_url}}/build/generic/web/viewer.html?file={{pdf_url}}/static/slides/{{course_name}}/{{lec_name}}/{{slide_name}}#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+  ></iframe>
+</div>
+
+  
+  <button type="button" id="prev" class="btn btn-success pull-left" style="margin-top: 20px" onclick="location.href='{{base_url}}/prev_slide/{{course_name}}/{{lno}}/{{slide_name}}'">Prev Slide</button>
+  <button type="button" id="next" class="btn btn-success pull-right" style="margin-top:20px" onclick="location.href='{{base_url}}/next_slide/{{course_name}}/{{lno}}/{{slide_name}}'">Next Slide</button>
+  </div>
+
+
+            <div class="sidebar">
+                <ul class="nav nav-sidebar">
+            <h2>Related slides</h2>
+       
+          {% for i in range(num_related_slides) %}
+    <li>
+    
+      <a href="{{base_url}}/related_slide/{{related_course_names[i]}}/{{rel_lnos[i]}}/{{related_slides[i]}}" id="{{i}}" class="related" data-toggle="popover" style="color:{{disp_color[i]}};" title="<embed type='application/pdf' src={{pdf_url}}/static/slides/{{related_course_names[i]}}/{{rel_lec_names[i]}}/{{related_slides[i]}}#toolbar=0&navpanes=0&scrollbar=0&view=Fit width='220px' height:'100px' >" >{{disp_str[i]}} </a>
+    
+    
+    </li>
+    {% endfor %}
+            
+        </ul>
+    </div>
+     </div>
+     
+    <div class="row" style="display: flex;">
+ <div class="col-md-12">
+ <div class="input-group add-on" >
+      <input class="form-control" placeholder="Search" name="srch-term" id="srch-term" type="text">
+      <div class="input-group-btn">
+        <button class="btn btn-default" id="submit" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+      </div>
+    </div>
+ </div>
+</div>
+ <div class="row" style="display: flex;padding: 20px;">
+<div class="col-md-9" id="result" padding-bottom="15px">
+ </div>
+</div>
+    </div>
+
+
+
+{% endblock %}
+
+  

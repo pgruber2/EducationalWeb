@@ -1,0 +1,1 @@
+are then merged together. This type of algorithm design-distributing the work and then merging the results-is a very common paradigm called Map Reduce. We will discuss its generality and many other applications in future chapters. 

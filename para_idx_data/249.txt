@@ -1,0 +1,1 @@
+Recall from Section 3.4 where we found which words were semantically related with the term computer. Figure 14 All documents containing word "computer" Figure 14.5 Using topic language models and a background language model to find semantically related words. 

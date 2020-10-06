@@ -1,0 +1,1 @@
+What is a recommender system? In what ways does it differ from a customer or productbased clustering system? How does it differ from a typical classification or predictive modeling system? Outline one method of collaborative filtering. Discuss why it works and what its limitations are in practice. 

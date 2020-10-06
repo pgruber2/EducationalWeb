@@ -1,0 +1,1 @@
+In the mutual information section, we applied a simple smoothing technique. Based on your knowledge from Chapter 6, define a more robust smoothing method for calculating syntagmatic relations. 

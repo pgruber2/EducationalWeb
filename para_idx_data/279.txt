@@ -1,0 +1,1 @@
+Calculate p(y) for each class label in the training data Calculate p(x i | y) for each feature for each class label in the training data Algorithm 15.4 Naive Bayes Testing return the y ∈ Y that maximizes p(y) . n i=1 p(x i | y) 

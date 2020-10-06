@@ -1,0 +1,1 @@
+Give an idea about how you could use topic models for a document representation in vector space. What does a similarity measure capture for this representation? 

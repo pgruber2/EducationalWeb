@@ -1,0 +1,1 @@
+Design a heuristic to automatically determine the best α for mixture model feedback on a query-by-query basis. You could look at the query itself, the number of matching documents, or the distribution of ranking scores in the original results. Test your heuristic by doing experiments. 

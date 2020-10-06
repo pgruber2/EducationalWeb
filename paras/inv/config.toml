@@ -1,0 +1,15 @@
+corpus = "file.toml"
+dataset = "idx_data_heading"
+prefix = "/Users/bhavya/Documents/explanation/UI"
+index = "paras"
+[[analyzers]]
+	method = "ngram-word"
+	ngram = 1
+	[[analyzers.filter]]
+		type = "icu-tokenizer"
+	[[analyzers.filter]]
+		type = "lowercase"
+[query-runner]
+	query-id-start = 0
+	query-path = "slides-queries.txt"
+	timeout = 120

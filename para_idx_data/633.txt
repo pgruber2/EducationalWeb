@@ -1,0 +1,1 @@
+Why is the establishment of theoretical foundations important for data mining? Name and describe the main theoretical foundations that have been proposed for data mining. Comment on how they each satisfy (or fail to satisfy) the requirements of an ideal theoretical framework for data mining. 

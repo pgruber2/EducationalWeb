@@ -1,0 +1,1 @@
+Design a privacy-preserving clustering method so that a data owner would be able to ask a third party to mine the data for quality clustering without worrying about the potential inappropriate disclosure of certain private or sensitive information stored in the data. 

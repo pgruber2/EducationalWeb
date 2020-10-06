@@ -1,0 +1,1 @@
+Prove that in DBSCAN, for a fixed MinPts value and two neighborhood thresholds, 1 < 2 , a cluster C with respect to 1 and MinPts must be a subset of a cluster C with respect to 2 and MinPts. 

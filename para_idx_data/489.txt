@@ -1,0 +1,1 @@
+D: a data set containing n objects, : the radius parameter, and MinPts: the neighborhood density threshold. Output: A set of density-based clusters. 

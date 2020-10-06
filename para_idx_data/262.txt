@@ -1,0 +1,1 @@
+Clustering search results to allow browsing was one application of clustering given in this chapter. What clustering method would you choose to implement for your search engine, assuming simplicity, effectiveness, and running time were all concerns? 

@@ -1,0 +1,1 @@
+and return (usually) the top k. Again, we save time in this sorting operation by only sorting documents that contained a query term as opposed to sorting every single document in the index, even if its score is zero. 

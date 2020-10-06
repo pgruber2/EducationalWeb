@@ -1,0 +1,1 @@
+Beta-gamma thresholding compares search engine scores to a cutoff parameter θ . Consider the following argument: "Using a single fixed point θ does not allow query comparability since query scores are not normalized." Defend or refute this statement. 

@@ -1,0 +1,1 @@
+Provide the pseudocode of the step in CLIQUE that finds dense cells in all subspaces. 

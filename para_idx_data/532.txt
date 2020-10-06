@@ -1,0 +1,1 @@
+"How can we find subspace clusters from high-dimensional data?" Many methods have been proposed. They generally can be categorized into three major groups: subspace search methods, correlation-based clustering methods, and biclustering methods. 

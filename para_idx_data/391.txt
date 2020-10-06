@@ -1,0 +1,1 @@
+For a product review dataset, there are k different product types. The true value of k is in the range [2,5]. How many product types do you think there were? How can you use topic analysis to help you? (A product type is something like "CPU" or "router"). 

@@ -1,0 +1,92 @@
+
+.input-group-button > .btn{
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+.input-group-button > .btn:focus {
+ box-shadow:none;
+ -webkit-box-shadow:none; 
+ border-color:transparent; 
+ outline: none;
+}
+
+.input-group-append > .btn:focus {
+ box-shadow:none;
+ -webkit-box-shadow:none; 
+ border-color:transparent; 
+ outline: none;
+}
+
+/* stop the glowing blue shadow */
+.add-on .searchbox:focus {
+ box-shadow:none;
+ -webkit-box-shadow:none; 
+ border-color:transparent; 
+ outline: none;
+}
+
+
+
+#docs-div{
+      padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.card{
+ margin-top:20px;
+ text-align: left;
+ box-shadow: 0 2px 4px rgba(0,0,0,.11);
+ height: 260px;
+ 
+}
+
+
+.card-header{
+  /*background-color:rgba(0,0,0,.03);*/
+  background-color:  #d7e9f7;
+  display: flex; 
+  flex-direction:column;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.card-body{
+      /*background-color: rgba(0,0,0,.01)*/
+      background-color: white;
+      overflow: auto;
+      height: 85%;
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+}
+
+.header-item{
+  display: flex;
+  font-size:14px;
+  vertical-align: middle;
+}
+
+.tag .material-icons{
+  vertical-align: middle;
+  font-size:14px;
+
+}
+.navbar-nav .material-icons{
+  vertical-align: middle;
+
+
+}
+#notHelpfulButton {
+  display: none;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.11);
+}
+
+#helpfulButton {
+  display: none;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.11);
+}

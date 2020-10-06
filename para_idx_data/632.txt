@@ -1,0 +1,1 @@
+Research and describe a data mining application that was not presented in this chapter. Discuss how different forms of data mining can be used in the application. 

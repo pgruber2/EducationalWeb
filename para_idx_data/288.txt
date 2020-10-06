@@ -1,0 +1,1 @@
+How can we determine if we have "enough" training data for a classifier? Make an argument using a plot, where the x axis is training data size and the y axis is classification accuracy on unseen test data. 15.11. Explain how to read a confusion matrix in order to determine two classes that are often mistaken for each other by the classifier. 

@@ -1,0 +1,1 @@
+{I : 1, took : 1, a : 2, vacation : 1, to : 2, go : 1, beach : 1} 2-grams (bigrams): {I took : 1, took a : 1, a vacation : 1, vacation to : 1, to go : 1, go to : 1, to a : 1, a beach : 1} Exercises 69 

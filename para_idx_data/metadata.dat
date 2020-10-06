@@ -1,0 +1,642 @@
+0.txt	410	-6.566265968000171	None
+1.txt	410	-6.3435369404035225	Preface : 
+2.txt	410	-6.32986117590211	Acknowledgments : 
+3.txt	410	-6.3950740126764325	Introduction : 
+4.txt	410	-6.209995916954041	Text (natural language) is the most natural way of encoding human knowledge. : 
+5.txt	410	-6.3888959390404	Functions of Text Information Systems : 
+6.txt	410	-6.329453630269429	Select information : 
+7.txt	410	-6.553101086736201	Conceptual Framework for Text Information Systems : 
+8.txt	410	-6.49543078347838	Organization of the Book 13 : 
+9.txt	410	-7.238690858096251	Organization of the Book : 
+10.txt	410	-6.097373028939675	Part I. Overview and Background. This part consists of the first four chapters : 
+11.txt	410	-6.484010444542358	Basics of Probability and Statistics : 
+12.txt	410	-6.806743698373491	Basics of Probability and Statistics 23 : 
+13.txt	410	-6.359396878910737	Joint and Conditional Probabilities : 
+14.txt	410	-6.634522436896778	Basics of Probability and Statistics 25 : 
+15.txt	410	-6.599971307668687	Bayes' Rule : 
+16.txt	410	-6.180980569845376	Coin Flips and the Binomial Distribution : 
+17.txt	410	-6.348844271300967	Maximum Likelihood Parameter Estimation : 
+18.txt	410	-6.637146707251181	Bayesian Parameter Estimation : 
+19.txt	410	-6.512191854880523	Chapter 2 Background : 
+20.txt	410	-6.612733078970541	Probabilistic Models and Their Applications : 
+21.txt	410	-6.729115490861505	Learn its parameters. : 
+22.txt	410	-6.484284915895076	Information Theory 31 : 
+23.txt	410	-6.038448896873177	Information Theory : 
+24.txt	410	-6.58930904961319	Chapter 2 Background : 
+25.txt	410	-6.566874883329592	Machine Learning : 
+26.txt	410	-6.130189104610295	Machine Learning 35 : 
+27.txt	410	-6.457339276876319	Bibliographic Notes and Further Reading : 
+28.txt	410	-6.805222882889845	2.2. : 
+29.txt	410	-7.128396277400894	Chapter 3 Text Data Understanding 41 : 
+30.txt	410	-7.07749442971094	Syntactic analysis (parsing) : 
+31.txt	410	-6.735367587270585	Pragmatic analysis (speech act ) : 
+32.txt	410	-6.597309351721277	Syntactic ambiguity. : 
+33.txt	410	-6.704319920912244	History and State of the Art in NLP : 
+34.txt	410	-6.435898048319013	NLP and Text Information Systems : 
+35.txt	410	-7.1366645634228645	Tasks : 
+36.txt	410	-6.725600049742167	Classification/ retrieval : 
+37.txt	410	-5.946361434870328	Text Representation : 
+38.txt	410	-6.401922368051541	Text Representation 47 : 
+39.txt	410	-5.988157482789125	Chapter 3 Text Data Understanding : 
+40.txt	410	-6.552254212174947	Statistical Language Models : 
+41.txt	410	-6.000368822169173	Statistical Language Models 51 : 
+42.txt	410	-6.229968789935439	Statistical Language Models 53 : 
+43.txt	410	-6.4345147180257944	Bibliographic Notes and Further Reading : 
+44.txt	410	-7.2563750327314676	3.1. : 
+45.txt	410	-7.090009387101774	3.2. : 
+46.txt	410	-6.712503803387703	3.7. : 
+47.txt	410	-6.429731488388543	3.8. : 
+48.txt	410	-6.454442921208723	An : 
+49.txt	410	-6.4886738605022405	Chapter 4 META: A Unified Toolkit for Text Data Management and Analysis : 
+50.txt	410	-6.2517618787563585	Design Philosophy : 
+51.txt	410	-6.611613422232318	Setting up META 59 : 
+52.txt	410	-6.658013291439369	Setting up META : 
+53.txt	410	-6.723637860083644	Chapter 4 META: A Unified Toolkit for Text Data Management and Analysis : 
+54.txt	410	-6.371143018730206	Architecture : 
+55.txt	410	-6.016632171021511	Tokenization with META : 
+56.txt	410	-6.611421752237309	Related Toolkits : 
+57.txt	410	-6.09952743769878	Exercises : 
+58.txt	410	-5.820644147202938	Stemming. : 
+59.txt	410	-6.431431021039997	Parsing. : 
+60.txt	410	-6.773760900817314	Frequency Analysis. : 
+61.txt	410	-6.995948340226864	1-grams (unigrams): 
+62.txt	410	-5.955145239410624	3-grams (trigrams): 
+63.txt	410	-6.425526236764825	Data Access : 
+64.txt	410	-6.348027223884171	Access Mode: Pull vs. Push : 
+65.txt	410	-5.735450466454071	Chapter 5 Overview of Text Data Access : 
+66.txt	410	-6.3740635558896095	Multimode Interactive Access : 
+67.txt	410	-6.069046903238887	Multimode Interactive Access 77 : 
+68.txt	410	-6.4444061881282355	Text Retrieval : 
+69.txt	410	-6.19616627115439	Text Retrieval 79 : 
+70.txt	410	-5.86716379857587	Text Retrieval vs. Database Retrieval : 
+71.txt	410	-6.560659351805365	Chapter 5 Overview of Text Data Access : 
+72.txt	410	-7.05146426572955	Document Selection vs. Document Ranking : 
+73.txt	410	-6.390497251013082	A user will browse the results sequentially. : 
+74.txt	410	-6.394787413537371	Bibliographic Notes and Further Reading : 
+75.txt	410	-7.237054139891746	5.1. : 
+76.txt	410	-7.142407717168401	5.2. : 
+77.txt	410	-6.971084611214587	5.3. : 
+78.txt	410	-6.466974231760247	5.4. : 
+79.txt	410	-6.574405222171629	5.7. : 
+80.txt	410	-6.6418925215348	5.8. : 
+81.txt	410	-6.616591083227103	5.10. : 
+82.txt	410	-6.183675777227881	6.1 : 
+83.txt	410	-6.4423662665017805	Common Form of a Retrieval Function : 
+84.txt	410	-6.047814242888762	Common Form of a Retrieval Function 89 : 
+85.txt	410	-6.627600829404024	Vector Space Retrieval Models : 
+86.txt	410	-6.276779768187191	Vector Space Retrieval Models 91 : 
+87.txt	410	-7.130842748262865	Instantiation of the Vector Space Model : 
+88.txt	410	-7.336517255314982	Behavior of the Bit Vector Representation : 
+89.txt	410	-6.646421434370724	Vector Space Retrieval Models 97 : 
+90.txt	410	-6.394282954403915	Improved Instantiation : 
+91.txt	410	-5.846494154140485	Vector Space Retrieval Models 99 : 
+92.txt	410	-6.465827231146282	Vector Space Retrieval Models 101 : 
+93.txt	410	-7.984035763549146	TF Transformation : 
+94.txt	410	-6.822410249924877	Document Length Normalization : 
+95.txt	410	-6.065879544821816	Reward Penalization : 
+96.txt	410	-6.547766059976775	Further Improvement of Basic VS Models : 
+97.txt	410	-5.931670872974486	Vector Space Retrieval Models 109 : 
+98.txt	410	-6.361765303396598	Summary : 
+99.txt	410	-6.529061844589719	Probabilistic Retrieval Models : 
+100.txt	410	-6.208048500799317	Probabilistic Retrieval Models 113 : 
+101.txt	410	-6.357414938394325	The Query Likelihood Retrieval Model : 
+102.txt	410	-5.804034851880694	Probabilistic Retrieval Models 115 : 
+103.txt	410	-6.450972711480374	Probabilistic Retrieval Models 117 : 
+104.txt	410	-6.361501743394283	Chapter 6 Retrieval Models : 
+105.txt	410	-5.941959449475704	Smoothing the Document Language Model : 
+106.txt	410	-5.869652361512972	Doc length normalization : 
+107.txt	410	-6.4605192920478824	Probabilistic Retrieval Models 123 : 
+108.txt	410	-6.246004313835407	Specific smoothing methods : 
+109.txt	410	-5.662697654854617	Probabilistic Retrieval Models 125 : 
+110.txt	410	-6.335995585698704	The relevance can be modeled by the query likelihood : 
+111.txt	410	-6.405081763981403	Bibliographic Notes and Further Reading : 
+112.txt	410	-6.974033404581107	6.1. : 
+113.txt	410	-7.247214325201513	6.2. : 
+114.txt	410	-6.549275682431366	6.3. : 
+115.txt	410	-6.503459748787444	Remove top 10 words : 
+116.txt	410	-6.427997782374503	6.15. : 
+117.txt	410	-6.340477667947122	6.19. : 
+118.txt	410	-6.535460455758763	Results : 
+119.txt	410	-6.225086109368969	Feedback in the Vector Space Model : 
+120.txt	410	-6.416555478947877	Feedback in the Vector Space Model 137 : 
+121.txt	410	-6.470948900370609	Chapter 7 Feedback : 
+122.txt	410	-6.196926753908812	Feedback in Language Models : 
+123.txt	410	-6.258332757658181	Query likelihood : 
+124.txt	410	-6.669662344697634	Feedback in Language Models : 
+125.txt	410	-6.227718787990932	Feedback in Language Models 143 : 
+126.txt	410	-6.582298583904682	Bibliographic Notes and Further Reading : 
+127.txt	410	-6.597708105917612	7.8. : 
+128.txt	410	-6.597708105917612	7.9. : 
+129.txt	410	-6.486632230805086	7.10. : 
+130.txt	410	-6.921286739793009	Implementation : 
+131.txt	410	-6.729032546741854	Tokenizer. This component takes in documents as raw strings and determines : 
+132.txt	410	-5.842564370557621	8.1 : 
+133.txt	410	-6.036462570022431	Indexer : 
+134.txt	410	-6.002030070394151	Indexer : 
+135.txt	410	-6.382511795354696	Figure 8.2 Sort-based inversion of inverted index chunks. : 
+136.txt	410	-6.5626067415475715	Scorer : 
+137.txt	410	-6.041277989360167	Term-at-a-time Ranking : 
+138.txt	410	-6.707794508084258	Scorer 155 : 
+139.txt	410	-6.622059190454243	Document-at-a-time Ranking : 
+140.txt	410	-6.441206744120417	Filtering Documents : 
+141.txt	410	-6.442477074987597	context = {} : 
+142.txt	410	-6.464494160587287	Index Sharding : 
+143.txt	410	-6.620314083790802	Feedback Implementation 157 : 
+144.txt	410	-6.073444180962609	Feedback Implementation : 
+145.txt	410	-6.186239225271378	Compression : 
+146.txt	410	-6.678652477530355	Bitwise compression : 
+147.txt	410	-6.755619860956772	Block compression : 
+148.txt	410	-6.284516859422196	Compression 161 : 
+149.txt	410	-6.414607742934977	Chapter 8 Search Engine Implementation : 
+150.txt	410	-6.416572899271723	8.6 : 
+151.txt	410	-6.475623913161947	LRU cache : 
+152.txt	410	-6.068962655006426	DBLRU cache : 
+153.txt	410	-6.688523072306282	Introduction : 
+154.txt	410	-6.666959975136899	What to Measure? : 
+155.txt	410	-6.499670213535087	Usability. : 
+156.txt	410	-6.431951451426016	Cranfield Evaluation Methodology : 
+157.txt	410	-7.07749442971094	Test Collection Evaluation : 
+158.txt	410	-6.782633187357839	Chapter 9 Search Engine Evaluation : 
+159.txt	410	-6.653655078835449	Evaluation of Set Retrieval : 
+160.txt	410	-6.602510969707271	Precision and Recall : 
+161.txt	410	-6.189240732758917	Evaluation of Set Retrieval 171 : 
+162.txt	410	-6.4383231598350825	The F Measure: Combining Precision and Recall : 
+163.txt	410	-6.542449453272394	Evaluation of a Ranked List : 
+164.txt	410	-7.2486010496877755	Evaluation of a Ranked List 175 : 
+165.txt	410	-6.399454761543574	Evaluating Ranked Lists from Multiple Queries : 
+166.txt	410	-6.209394796892654	Evaluation of a Ranked List 179 : 
+167.txt	410	-6.556895959190824	Evaluation with Multi-level Judgements : 
+168.txt	410	-6.32517645800466	Evaluation with Multi-level Judgements 181 : 
+169.txt	410	-6.517224541084953	Practical Issues in Evaluation 183 : 
+170.txt	410	-6.747393214602631	Practical Issues in Evaluation : 
+171.txt	410	-6.6182377762484474	Practical Issues in Evaluation : 
+172.txt	410	-6.615395775768121	Bibliographic Notes and Further Reading : 
+173.txt	410	-6.727509500525139	9.2. : 
+174.txt	410	-6.575142184373886	9.7. : 
+175.txt	410	-5.876148910044217	9.12. : 
+176.txt	410	-5.966474577159194	Web Crawling : 
+177.txt	410	-5.999264058329418	Web Indexing : 
+178.txt	410	-6.973672704971877	Web Indexing 197 : 
+179.txt	410	-6.334563346223586	Link Analysis : 
+180.txt	410	-6.202463103736766	Link Analysis 201 : 
+181.txt	410	-8.258700817669837	PageRank : 
+182.txt	410	-6.234365095094194	Link Analysis 205 : 
+183.txt	410	-6.210188832084617	HITS : 
+184.txt	410	-11.680568648961108	Learning to Rank : 
+185.txt	410	-6.367434973573077	The Future of Web Search : 
+186.txt	410	-5.860454736279961	The Future of Web Search 213 : 
+187.txt	410	-6.443985735425998	Bibliographic Notes and Further Reading : 
+188.txt	410	-6.277560975406694	JavaScript Crawlers. : 
+189.txt	410	-6.856863882123299	document.body.innerText : 
+190.txt	410	-6.198078598559454	Content-based Recommendation 223 : 
+191.txt	410	-7.212620816847987	Content-based Recommendation 225 : 
+192.txt	410	-6.594552126974289	Collaborative Filtering : 
+193.txt	410	-7.247214325201513	Users with a common interest will have similar preferences : 
+194.txt	410	-7.067302908161995	Users with similar preferences share the same interest : 
+195.txt	410	-6.429917763733987	Chapter 11 Recommender Systems : 
+196.txt	410	-6.636744674668816	Evaluation of Recommender Systems 233 : 
+197.txt	410	-5.945205504722954	Evaluation of Recommender Systems : 
+198.txt	410	-6.131849570596311	Bibliographic Notes and Further Reading : 
+199.txt	410	-6.688527394995906	11.3. : 
+200.txt	410	-6.6348431572227025	11.4. : 
+201.txt	410	-6.427135491661695	11.5. : 
+202.txt	410	-6.468588046745043	11.8. : 
+203.txt	410	-6.667993377640686	11.12. : 
+204.txt	410	-6.123836261101523	Data Analysis : 
+205.txt	410	-6.068350973398246	Motivation: Applications of Text Data Analysis : 
+206.txt	410	-5.792246415732246	Text vs. Non-text Data: Humans as Subjective Sensors : 
+207.txt	410	-6.441830709136785	Landscape of text mining tasks : 
+208.txt	410	-6.111648200764213	Real world : 
+209.txt	410	-6.083264530092116	Chapter 12 Overview of Text Data Analysis : 
+210.txt	410	-6.618870180481121	Landscape of text mining tasks 249 : 
+211.txt	410	-6.567856232224669	General idea of word association mining : 
+212.txt	410	-7.011733785211259	General idea of word association mining 253 : 
+213.txt	410	-5.8432335825318	dog: 
+214.txt	410	-7.174663870074952	Chapter 13 Word Association Mining : 
+215.txt	410	-6.299380068590477	Syntagmatic: correlated occurrences : 
+216.txt	410	-6.732926436713417	cat: 
+217.txt	410	-6.028511383808045	Discovery of paradigmatic relations : 
+218.txt	410	-7.234395479498165	Discovery of paradigmatic relations 257 : 
+219.txt	410	-5.901774308024147	Discovery of paradigmatic relations 259 : 
+220.txt	410	-6.422299838462729	Discovery of Syntagmatic Relations : 
+221.txt	410	-6.26744677654985	Discovery of Syntagmatic Relations 261 : 
+222.txt	410	-6.907266098039929	Chapter 13 Word Association Mining : 
+223.txt	410	-5.967990872006948	Discovery of Syntagmatic Relations 263 : 
+224.txt	410	-6.674690706326186	Mining syntagmatic relations using mutual information : 
+225.txt	410	-6.082747180444022	Discovery of Syntagmatic Relations 265 : 
+226.txt	410	-7.125955658705515	Mutual information: I(X; Y) = H(X) -H(X|Y) = H(Y) -H(Y|X) : 
+227.txt	410	-6.649680790566131	Chapter 13 Word Association Mining : 
+228.txt	410	-7.12756080390322	Discovery of Syntagmatic Relations 267 : 
+229.txt	410	-6.4171783617800635	Figure 13.11 Probabilities involved in the definition of mutual information. : 
+230.txt	410	-5.878628426875897	Chapter 13 Word Association Mining : 
+231.txt	410	-6.7250960801724124	Discovery of Syntagmatic Relations 269 : 
+232.txt	410	-6.478457794119814	Evaluation of Word Association Mining 271 : 
+233.txt	410	-5.885112572155677	Evaluation of Word Association Mining : 
+234.txt	410	-5.822212391421646	agile, blue, Zaire} : 
+235.txt	410	-6.811632002005187	13.2. : 
+236.txt	410	-6.773519309729748	13.3. : 
+237.txt	410	-6.761810040341709	13.7. : 
+238.txt	410	-6.709487195310766	13.8. : 
+239.txt	410	-6.966497163802342	In what scenario (if any) is word association mining a generalization of an : 
+240.txt	410	-5.885900404560832	Overview of Clustering Techniques : 
+241.txt	410	-6.358569468546175	Document Clustering : 
+242.txt	410	-6.367091432030642	Agglomerative Hierarchical Clustering : 
+243.txt	410	-7.117101859696239	Document Clustering : 
+244.txt	410	-6.38583982536989	Chapter 14 Text Clustering : 
+245.txt	410	-6.150920888131769	K-means : 
+246.txt	410	-6.41505831094636	Document Clustering : 
+247.txt	410	-6.469300169723153	Term Clustering : 
+248.txt	410	-6.368701883779267	Term Clustering 285 : 
+249.txt	410	-6.691078826535159	Semantically Related Terms : 
+250.txt	410	-6.517310011020897	Chapter 14 Text Clustering : 
+251.txt	410	-6.485715392013873	Term Clustering 287 : 
+252.txt	410	-6.498306816181614	Pointwise Mutual Information : 
+253.txt	410	-7.192520089924986	Advanced Methods : 
+254.txt	410	-5.7945886955739025	N-gram Class Language Models : 
+255.txt	410	-5.747136314217971	Neural language model (word embedding) : 
+256.txt	410	-6.245520225259423	Term Clustering 293 : 
+257.txt	410	-6.546027811977978	Chapter 14 Text Clustering : 
+258.txt	410	-6.870722117360149	Evaluation of Text Clustering : 
+259.txt	410	-6.321879969398541	Separation. How far away are objects in different clusters? : 
+260.txt	410	-6.238916535182186	Evaluation of Text Clustering 295 : 
+261.txt	410	-6.647096177107248	Bibliographic Notes and Further Reading : 
+262.txt	410	-6.690045993612419	14.1. : 
+263.txt	410	-6.556226643661649	14.2. : 
+264.txt	410	-6.364674382099364	14.4. : 
+265.txt	410	-6.396125138811624	14.10. : 
+266.txt	410	-6.586593859294833	Introduction : 
+267.txt	410	-7.07749442971094	Text objects Categorization system : 
+268.txt	410	-6.489103159341451	2. : 
+269.txt	410	-6.250296206819179	Overview of Text Categorization Methods : 
+270.txt	410	-6.848718110536745	Text Categorization Problem : 
+271.txt	410	-6.431428110020569	Text Categorization Problem 303 : 
+272.txt	410	-6.6700632993053555	Features for Text Categorization : 
+273.txt	410	-6.448682583172932	Features for Text Categorization 305 : 
+274.txt	410	-6.11616426155215	Chapter 15 Text Categorization : 
+275.txt	410	-6.391771282924406	Classification Algorithms : 
+276.txt	410	-6.520743373367197	k-Nearest Neighbors : 
+277.txt	410	-6.523563724033533	Classification Algorithms 309 : 
+278.txt	410	-6.662192274965956	Naive Bayes : 
+279.txt	410	-7.139200013379468	Algorithm 15.3 Naive Bayes Training : 
+280.txt	410	-6.300032234441734	Chapter 15 Text Categorization : 
+281.txt	410	-6.25306718825621	Linear Classifiers : 
+282.txt	410	-6.407157681123299	Evaluation of Text Categorization 313 : 
+283.txt	410	-6.155075062862806	Evaluation of Text Categorization : 
+284.txt	410	-6.4268575831172585	Bibliographic Notes and Further Reading : 
+285.txt	410	-6.597067985873396	15.5. : 
+286.txt	410	-7.192607341213434	15.6. : 
+287.txt	410	-6.626485030764825	15.7. : 
+288.txt	410	-6.5905082826829995	15.10. : 
+289.txt	410	-6.450155381693442	15.12. : 
+290.txt	410	-6.414185819156541	Overview of Text Summarization Techniques : 
+291.txt	410	-6.308887561296429	Extractive Text Summarization : 
+292.txt	410	-6.50872362369867	-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- : 
+293.txt	410	-6.452386591171994	Abstractive Text Summarization 321 : 
+294.txt	410	-6.466822583731179	Abstractive Text Summarization : 
+295.txt	410	-6.31644523241725	Chapter 16 Text Summarization : 
+296.txt	410	-5.979191560113321	Abstractive Text Summarization 323 : 
+297.txt	410	-6.172368128637716	Advanced Abstractive Methods : 
+298.txt	410	-6.592757997767868	Even better would be : 
+299.txt	410	-6.3802312778166925	Evaluation of Text Summarization : 
+300.txt	410	-6.059629240807823	Applications of Text Summarization 325 : 
+301.txt	410	-6.907956973072703	Applications of Text Summarization : 
+302.txt	410	-6.5214078502448105	Bibliographic Notes and Further Reading : 
+303.txt	410	-6.869731325864645	16.5. : 
+304.txt	410	-7.001076648992652	16.6. : 
+305.txt	410	-6.765201601795823	16.7. : 
+306.txt	410	-6.303846675714134	16.8. : 
+307.txt	410	-6.260376126619663	Text data : 
+308.txt	410	-6.434579963145787	Text data : 
+309.txt	410	-6.990849679326766	Topics as Terms : 
+310.txt	410	-6.080059626207166	Topics as Word Distributions 335 : 
+311.txt	410	-6.07548453740287	Topics as Word Distributions : 
+312.txt	410	-7.008652806077804	Topics as Word Distributions 337 : 
+313.txt	410	-7.100501183202245	Topics as Word Distributions 339 : 
+314.txt	410	-6.246238461536053	Mining One Topic from Text : 
+315.txt	410	-6.892521883495057	The Simplest Topic Model: Unigram Language Model : 
+316.txt	410	-6.16272196035305	Likelihood function: 
+317.txt	410	-6.288810652243388	Mining One Topic from Text 343 : 
+318.txt	410	-6.630427720195835	Adding a Background Language Model : 
+319.txt	410	-6.305895187715956	Mining One Topic from Text 347 : 
+320.txt	410	-6.372274380024457	Mining One Topic from Text 349 : 
+321.txt	410	-6.749591003762661	Mining One Topic from Text 351 : 
+322.txt	410	-6.124078740297381	Estimation of a mixture model : 
+323.txt	410	-8.59250985692745	Behavior of a Mixture Model : 
+324.txt	410	-6.429382546810757	Mining One Topic from Text 359 : 
+325.txt	410	-5.994976260961544	Expectation-Maximization : 
+326.txt	410	-6.499438758772026	Mining One Topic from Text 361 : 
+327.txt	410	-6.026268223539845	Mining One Topic from Text 363 : 
+328.txt	410	-6.443105141511737	Probabilistic Latent Semantic Analysis : 
+329.txt	410	-5.966494251648882	Probabilistic Latent Semantic Analysis : 
+330.txt	410	-5.801976294777696	Probabilistic Latent Semantic Analysis : 
+331.txt	410	-6.344216287580838	Probabilistic Latent Semantic Analysis 373 : 
+332.txt	410	-6.246661960243052	Use of Bayes Rule : 
+333.txt	410	-6.298051104302588	Probabilistic Latent Semantic Analysis 375 : 
+334.txt	410	-5.95115162741503	Extension of PLSA and Latent Dirichlet Allocation : 
+335.txt	410	-6.402789044658017	Chapter 17 Topic Analysis : 
+336.txt	410	-6.388246064180819	Evaluating Topic Analysis : 
+337.txt	410	-6.598785969834864	Chapter 17 Topic Analysis : 
+338.txt	410	-6.1974647502376925	Summary of Topic Models : 
+339.txt	410	-6.488517285741384	Bibliographic Notes and Further Reading : 
+340.txt	410	-6.335277607159474	Sentiment Analysis : 
+341.txt	410	-6.3034408666921475	Real world : 
+342.txt	410	-7.001076648992652	Target : 
+343.txt	410	-6.389286517436472	Context Negative : 
+344.txt	410	-6.445439039461987	Sentiment Classification 393 : 
+345.txt	410	-7.461914811167672	Sentiment Classification : 
+346.txt	410	-6.499844567456247	Ordinal Regression : 
+347.txt	410	-6.365673752213578	Ordinal Regression 399 : 
+348.txt	410	-6.736541640843435	Chapter 18 Opinion Mining and Sentiment Analysis : 
+349.txt	410	-6.187667025091344	Latent Aspect Rating Analysis : 
+350.txt	410	-5.803661622169767	Latent! Observed : 
+351.txt	410	-7.769417725762971	Latent Aspect Rating Analysis 405 : 
+352.txt	410	-6.862700680310872	Evaluation of Opinion Mining and Sentiment Analysis : 
+353.txt	410	-6.593912699832927	Evaluation of Opinion Mining and Sentiment Analysis : 
+354.txt	410	-7.456662215588915	Introduction : 
+355.txt	410	-6.233282768693412	Contextual Text Mining : 
+356.txt	410	-6.12847488097681	Contextual Probabilistic Latent Semantic Analysis 419 : 
+357.txt	410	-6.553071550575359	Contextual Probabilistic Latent Semantic Analysis : 
+358.txt	410	-6.373678739982314	Chapter 19 Joint Analysis of Text and Structured Data : 
+359.txt	410	-5.841508053712775	Contextual Probabilistic Latent Semantic Analysis : 
+360.txt	410	-6.188618675570161	Topic Analysis with Social Networks as Context : 
+361.txt	410	-6.220622559712206	Topic Analysis with Social Networks as Context 429 : 
+362.txt	410	-5.817882643789736	Topic Analysis with Social Networks as Context 431 : 
+363.txt	410	-6.602906133748282	Topic Analysis with Time Series Context 433 : 
+364.txt	410	-6.6133796647298615	Topic Analysis with Time Series Context : 
+365.txt	410	-7.123721116865213	Chapter 19 Joint Analysis of Text and Structured Data : 
+366.txt	410	-6.5088020236549315	Topic Analysis with Time Series Context 437 : 
+367.txt	410	-6.609963511744166	Summary 439 : 
+368.txt	410	-6.340072084475325	Summary : 
+369.txt	410	-6.393571192516483	Bibliographic Notes and Further Reading : 
+370.txt	410	-6.125524446785275	Exercises for Text Management and Analysis : 
+371.txt	410	-7.07749442971094	Search : 
+372.txt	410	-6.371845960716147	Search : 
+373.txt	410	-6.522946774107608	Analysis engine : 
+374.txt	410	-6.5721990369667855	Text Analysis Operators : 
+375.txt	410	-6.894836656867833	Text Analysis Operators 449 : 
+376.txt	410	-6.541000442209503	TopicExtraction. : 
+377.txt	410	-6.504944774981226	System Architecture : 
+378.txt	410	-6.5904865027634605	META as a Unified System : 
+379.txt	410	-6.5486233895318975	META as a Unified System 455 : 
+380.txt	410	-6.69006198716986	A.2 Pseudo Counts, Smoothing, and Setting Hyperparameters : 
+381.txt	410	-6.512872733025	A.6 Conclusion : 
+382.txt	410	-6.2818869633151575	Expectation-Maximization : 
+383.txt	410	-6.5369626225044	B.1 A Simple Mixture Unigram Language Model : 
+384.txt	410	-6.639668451925786	B.2 Maximum Likelihood Estimation : 
+385.txt	410	-6.5445633627664295	B.3 Incomplete vs. Complete Data 467 : 
+386.txt	410	-6.479288630163651	B.3 Incomplete vs. Complete Data : 
+387.txt	410	-6.223926052112381	B.5 The General Procedure of EM : 
+388.txt	410	-13.589933196782553	Chapter 17 Topic Analysis : 
+389.txt	410	-6.552516836402688	Chapter 17 Topic Analysis : 
+390.txt	410	-7.238690858096251	17.2. : 
+391.txt	410	-6.53586589489869	17.3. : 
+392.txt	410	-6.915347713179248	17.4. : 
+393.txt	410	-6.783553834992054	17.5. : 
+394.txt	410	-6.9092678376703125	17.6. : 
+395.txt	410	-6.284961434130853	17.7. : 
+396.txt	410	-6.512198842602021	Bibliographic Notes and Further Reading : 
+397.txt	410	-6.507861177346221	18.2. : 
+398.txt	410	-6.433744405254718	18.3. : 
+399.txt	410	-6.542099639916767	Cross-fold validation is a useful way to evaluate classifiers as mentioned in : 
+400.txt	410	-6.524155000380076	Joint Analysis of Text and Structured Data : 
+401.txt	410	-6.890120291629908	Bayesian Statistics : 
+402.txt	410	-6.644266956952078	A.1 Binomial Estimation and the Beta Distribution : 
+403.txt	410	-6.469278106113886	Appendix A Bayesian Statistics : 
+404.txt	410	-6.746836581670735	Appendix A Bayesian Statistics : 
+405.txt	410	-6.6371345160770385	A.3 Generalizing to a Multinomial Distribution : 
+406.txt	410	-6.715116504937772	A.4 The Dirichlet Distribution 461 : 
+407.txt	410	-6.556277591239922	A.4 The Dirichlet Distribution : 
+408.txt	410	-6.575627877892166	B.4 A Lower Bound of Likelihood : 
+409.txt	410	-6.477559833483545	KL-divergence and Dirichlet Prior Smoothing : 
+410.txt	410	-6.457534855775739	C.1 Using KL-divergence for Retrieval : 
+411.txt	410	-6.666343990479221	Appendix C KL-divergence and Dirichlet Prior Smoothing : 
+412.txt	410	-6.811391633798916	Using Dirichlet Prior Smoothing : 
+413.txt	410	-6.419337729886627	C.3 Computing the Query Model p(w | θ Q ) : 
+414.txt	410	-6.563871962488594	Appendix C KL-divergence and Dirichlet Prior Smoothing : 
+415.txt	cluster_analysis	-6.57065843250181	None
+416.txt	cluster_analysis	-6.480352801146706	Data Objects and Attribute Types : 
+417.txt	cluster_analysis	-6.840790920733196	Ordinal Attributes : 
+418.txt	cluster_analysis	-6.358268389908042	Example 2.3 Ordinal attributes. : 
+419.txt	cluster_analysis	-6.760072321465622	Numeric Attributes : 
+420.txt	cluster_analysis	-6.681152754474528	Interval-Scaled Attributes : 
+421.txt	cluster_analysis	-6.503068385044671	Example 2.4 Interval-scaled attributes. : 
+422.txt	cluster_analysis	-6.49134220320478	Discrete versus Continuous Attributes : 
+423.txt	cluster_analysis	-6.44351620047646	Basic Statistical Descriptions of Data : 
+424.txt	cluster_analysis	-7.324670144892513	Measuring the Central Tendency: Mean, Median, and Mode : 
+425.txt	cluster_analysis	-6.661519098152048	Measuring the Dispersion of Data: Range, Quartiles, Variance, Standard Deviation, and Interquartile Range : 
+426.txt	cluster_analysis	-6.3188331091075565	Range, Quartiles, and Interquartile Range : 
+427.txt	cluster_analysis	-6.219815837380687	Five-Number Summary, Boxplots, and Outliers : 
+428.txt	cluster_analysis	-6.717876915061582	Variance and Standard Deviation : 
+429.txt	cluster_analysis	-6.943236977558707	Graphic Displays of Basic Statistical Descriptions of Data : 
+430.txt	cluster_analysis	-6.499202796175798	Quantile Plot : 
+431.txt	cluster_analysis	-6.501247759672548	Quantile-Quantile Plot : 
+432.txt	cluster_analysis	-6.575046684492714	Histograms : 
+433.txt	cluster_analysis	-6.439667736285735	Scatter Plots and Data Correlation : 
+434.txt	cluster_analysis	-6.511050676965994	Data Visualization : 
+435.txt	cluster_analysis	-6.49234888533504	Pixel-Oriented Visualization Techniques : 
+436.txt	cluster_analysis	-6.186297454556097	Example 2.16 Pixel-oriented visualization. AllElectronics maintains a customer information table, : 
+437.txt	cluster_analysis	-6.043931660056603	Geometric Projection Visualization Techniques : 
+438.txt	cluster_analysis	-6.400795772991994	Icon-Based Visualization Techniques : 
+439.txt	cluster_analysis	-6.475666871187633	Hierarchical Visualization Techniques : 
+440.txt	cluster_analysis	-6.218240065274753	Visualizing Complex Data and Relations : 
+441.txt	cluster_analysis	-6.453161387518344	Measuring Data Similarity and Dissimilarity : 
+442.txt	cluster_analysis	-6.765931113493617	Data Matrix versus Dissimilarity Matrix : 
+443.txt	cluster_analysis	-6.494538960542689	Proximity Measures for Nominal Attributes : 
+444.txt	cluster_analysis	-6.695931810955172	"How is dissimilarity computed between objects described by nominal attributes?" : 
+445.txt	cluster_analysis	-6.270471831090694	Proximity Measures for Binary Attributes : 
+446.txt	cluster_analysis	-6.464243723085076	Dissimilarity of Numeric Data: Minkowski Distance : 
+447.txt	cluster_analysis	-6.389328211133972	Proximity Measures for Ordinal Attributes : 
+448.txt	cluster_analysis	-6.630816832116378	2. : 
+449.txt	cluster_analysis	-6.297613872434533	Dissimilarity for Attributes of Mixed Types : 
+450.txt	cluster_analysis	-6.716882800880342	Cosine Similarity : 
+451.txt	cluster_analysis	-6.341040819603289	Summary : 
+452.txt	cluster_analysis	-6.701303472858682	2.1 : 
+453.txt	cluster_analysis	-6.581879035009737	2.2 : 
+454.txt	cluster_analysis	-6.794628254194892	2.4 : 
+455.txt	cluster_analysis	-7.014314776033981	2.5 : 
+456.txt	cluster_analysis	-6.603034382609507	2.7 : 
+457.txt	cluster_analysis	-6.750643858065932	2.8 : 
+458.txt	cluster_analysis	-6.3141851261100825	Bibliographic Notes : 
+459.txt	cluster_analysis	-6.561398393362376	Cluster Analysis : 
+460.txt	cluster_analysis	-6.016489481522301	What Is Cluster Analysis? : 
+461.txt	cluster_analysis	-6.622672995635538	Requirements for Cluster Analysis : 
+462.txt	cluster_analysis	-6.321369635203223	Scalability: 
+463.txt	cluster_analysis	-6.588037087472117	Cluster Analysis 447 : 
+464.txt	cluster_analysis	-6.21478980698637	Constraint-based clustering: 
+465.txt	cluster_analysis	-6.556232993517182	Overview of Basic Clustering Methods : 
+466.txt	cluster_analysis	-6.533012158279799	Grid-based methods: 
+467.txt	cluster_analysis	-6.700050765722122	Method General Characteristics : 
+468.txt	cluster_analysis	-6.865206497631336	Partitioning Methods 451 : 
+469.txt	cluster_analysis	-6.445634562713674	Partitioning Methods : 
+470.txt	cluster_analysis	-6.77326229483393	k-Means: A Centroid-Based Technique : 
+471.txt	cluster_analysis	-7.059602969506325	Input: 
+472.txt	cluster_analysis	-5.9501255517594025	Method: 
+473.txt	cluster_analysis	-7.0717346493979285	k-Medoids: A Representative Object-Based Technique : 
+474.txt	cluster_analysis	-7.059602969506325	Input: 
+475.txt	cluster_analysis	-6.450846079496654	Method: 
+476.txt	cluster_analysis	-6.257221495175993	Hierarchical Methods : 
+477.txt	cluster_analysis	-6.338747608106898	Agglomerative versus Divisive Hierarchical Clustering : 
+478.txt	cluster_analysis	-6.4706745956175595	Distance Measures in Algorithmic Methods : 
+479.txt	cluster_analysis	-6.4001599474003115	Using Clustering Feature Trees : 
+480.txt	cluster_analysis	-6.330644176045826	Hierarchical Methods 463 : 
+481.txt	cluster_analysis	-6.3362834045670855	Root level : 
+482.txt	cluster_analysis	-6.067779715704798	Using Dynamic Modeling : 
+483.txt	cluster_analysis	-6.346188544113512	Probabilistic Hierarchical Clustering : 
+484.txt	cluster_analysis	-6.796718696284679	Input: 
+485.txt	cluster_analysis	-6.861801780579095	Method: 
+486.txt	cluster_analysis	-6.35162216831623	Density-Based Methods : 
+487.txt	cluster_analysis	-7.093447460444094	Regions with High Density : 
+488.txt	cluster_analysis	-6.5629232710604395	OPTICS: Ordering Points to Identify the Clustering Structure : 
+489.txt	cluster_analysis	-6.796718696284679	Input: 
+490.txt	cluster_analysis	-7.167855915878626	Method: 
+491.txt	cluster_analysis	-6.223472883094523	DENCLUE: Clustering Based on Density Distribution Functions : 
+492.txt	cluster_analysis	-6.459682824660711	Grid-Based Methods : 
+493.txt	cluster_analysis	-6.874534298130803	STING: STatistical INformation Grid : 
+494.txt	cluster_analysis	-7.981250520957466	CLIQUE: An Apriori-like Subspace Clustering Method : 
+495.txt	cluster_analysis	-6.800534532058066	Evaluation of Clustering : 
+496.txt	cluster_analysis	-6.600796442410683	Assessing Clustering Tendency : 
+497.txt	cluster_analysis	-6.840406651761543	Determining the Number of Clusters : 
+498.txt	cluster_analysis	-6.537126200559418	Measuring Clustering Quality : 
+499.txt	cluster_analysis	-6.000005159342629	Extrinsic Methods : 
+500.txt	cluster_analysis	-6.566865397247233	Small cluster preservation. : 
+501.txt	cluster_analysis	-6.634987200209665	Intrinsic Methods : 
+502.txt	cluster_analysis	-6.825598105881014	Summary : 
+503.txt	cluster_analysis	-6.866482028094974	10.1 : 
+504.txt	cluster_analysis	-6.345390825651323	10.2 : 
+505.txt	cluster_analysis	-6.8942341133038605	10.3 : 
+506.txt	cluster_analysis	-6.372098907864417	10.4 : 
+507.txt	cluster_analysis	-7.123757312886722	10.5 : 
+508.txt	cluster_analysis	-6.619961305575208	10.6 : 
+509.txt	cluster_analysis	-7.050414356036229	10.7 : 
+510.txt	cluster_analysis	-6.701619990715296	10.8 : 
+511.txt	cluster_analysis	-7.130002877726557	10.9 : 
+512.txt	cluster_analysis	-6.697916364860204	10.10 : 
+513.txt	cluster_analysis	-7.209299109555547	10.11 : 
+514.txt	cluster_analysis	-6.8240960520872145	10.12 : 
+515.txt	cluster_analysis	-6.607336706798346	10.13 : 
+516.txt	cluster_analysis	-6.680366459057751	10.15 : 
+517.txt	cluster_analysis	-6.556073058860613	10.16 : 
+518.txt	cluster_analysis	-6.394086951576927	10.17 : 
+519.txt	cluster_analysis	-6.557729263275131	10.19 : 
+520.txt	cluster_analysis	-6.586813496035376	10.20 : 
+521.txt	cluster_analysis	-7.058484416183956	10.21 : 
+522.txt	cluster_analysis	-6.663629919419767	Bibliographic Notes : 
+523.txt	cluster_analysis	-6.635564564918383	Advanced Cluster Analysis : 
+524.txt	cluster_analysis	-6.480732133493266	Fuzzy Clusters : 
+525.txt	cluster_analysis	-6.355909552374371	Probabilistic Model-Based Clusters : 
+526.txt	cluster_analysis	-6.451525969440003	Probabilistic Model-Based Clustering 503 : 
+527.txt	cluster_analysis	-6.479914904805079	2. : 
+528.txt	cluster_analysis	-6.411709484250654	Expectation-Maximization Algorithm : 
+529.txt	cluster_analysis	-5.8643949406193006	Probabilistic Model-Based Clustering 507 : 
+530.txt	cluster_analysis	-6.472441467456552	Clustering High-Dimensional Data : 
+531.txt	cluster_analysis	-6.515289093665528	Challenges, and Major Methodologies : 
+532.txt	cluster_analysis	-6.634857589216533	Subspace Clustering Methods : 
+533.txt	cluster_analysis	-6.187836057675139	Subspace Search Methods : 
+534.txt	cluster_analysis	-6.552987054720917	Correlation-Based Clustering Methods : 
+535.txt	cluster_analysis	-6.440942276702291	Biclustering Methods : 
+536.txt	cluster_analysis	-6.562821328546524	Biclustering : 
+537.txt	cluster_analysis	-8.674721512917245	Application Examples : 
+538.txt	cluster_analysis	-6.736216391689813	Clustering High-Dimensional Data 515 : 
+539.txt	cluster_analysis	-6.375296718740226	Types of Biclusters : 
+540.txt	cluster_analysis	-6.361108676792182	Biclustering Methods : 
+541.txt	cluster_analysis	-6.329882894552924	Optimization Using the δ-Cluster Algorithm : 
+542.txt	cluster_analysis	-6.2673353096779625	Enumerating All Biclusters Using MaPle : 
+543.txt	cluster_analysis	-6.181588805535445	Dimensionality Reduction Methods and Spectral : 
+544.txt	cluster_analysis	-6.186662012111334	4. : 
+545.txt	cluster_analysis	-6.465129240571845	Clustering Graph and Network Data : 
+546.txt	cluster_analysis	-6.768963174756849	Applications and Challenges : 
+547.txt	cluster_analysis	-6.763538068893228	Similarity Measures : 
+548.txt	cluster_analysis	-6.342725262532635	Geodesic Distance : 
+549.txt	cluster_analysis	-6.355549595431314	SimRank: Similarity Based on Random Walk and Structural Context : 
+550.txt	cluster_analysis	-7.597021274835899	Clustering Graph and Network Data 527 : 
+551.txt	cluster_analysis	-6.741465639789646	Graph Clustering Methods : 
+552.txt	cluster_analysis	-6.395897272422815	Sparsity: 
+553.txt	cluster_analysis	-6.434619693373379	Clustering with Constraints : 
+554.txt	cluster_analysis	-6.5413945327733725	Categorization of Constraints : 
+555.txt	cluster_analysis	-6.9711725891788445	Constraints on instances: 
+556.txt	cluster_analysis	-7.323603132076464	Constraints on clusters: 
+557.txt	cluster_analysis	-6.65986299700087	Methods for Clustering with Constraints : 
+558.txt	cluster_analysis	-6.879530716553984	Handling Hard Constraints : 
+559.txt	cluster_analysis	-6.286728891510758	Conduct modified k-means clustering. : 
+560.txt	cluster_analysis	-6.423956508663925	Handling Soft Constraints : 
+561.txt	cluster_analysis	-6.555908177312529	Penalty of a must-link violation. : 
+562.txt	cluster_analysis	-6.944630410409936	Penalty of a cannot-link violation. : 
+563.txt	cluster_analysis	-7.054924382435863	Clustering with Constraints 537 : 
+564.txt	cluster_analysis	-6.466322345796385	Speeding up Constrained Clustering : 
+565.txt	cluster_analysis	-6.584013831903303	Summary : 
+566.txt	cluster_analysis	-6.295673264614621	Exercises 539 : 
+567.txt	cluster_analysis	-6.6840316414228775	11.2 : 
+568.txt	cluster_analysis	-6.705166769015645	11.4 : 
+569.txt	cluster_analysis	-7.069374737927197	11.5 : 
+570.txt	cluster_analysis	-6.81823032346599	11.6 : 
+571.txt	cluster_analysis	-6.507442438081812	11.7 : 
+572.txt	cluster_analysis	-6.418171695298187	Bibliographic Notes : 
+573.txt	cluster_analysis	-6.452076778098355	Data Mining Trends and Research Frontiers : 
+574.txt	cluster_analysis	-6.3875097035963435	Mining Complex Data Types : 
+575.txt	cluster_analysis	-6.56981268124564	Sequences, and Biological Sequences : 
+576.txt	cluster_analysis	-6.429640485682614	Similarity Search in Time-Series Data : 
+577.txt	cluster_analysis	-6.418833101768688	Regression and Trend Analysis in Time-Series Data : 
+578.txt	cluster_analysis	-7.214886224279388	Cyclic movements: 
+579.txt	cluster_analysis	-6.54596238809655	Seasonal variations: 
+580.txt	cluster_analysis	-6.562669876384053	Random movements: 
+581.txt	cluster_analysis	-6.240152391733249	Sequential Pattern Mining in Symbolic Sequences : 
+582.txt	cluster_analysis	-6.3120540984843245	Sequence Classification : 
+583.txt	cluster_analysis	-6.322908072216511	Alignment of Biological Sequences : 
+584.txt	cluster_analysis	-6.782523717824338	Mining Complex Data Types 591 : 
+585.txt	cluster_analysis	-6.480275589914976	Hidden Markov Model for Biological Sequence Analysis : 
+586.txt	cluster_analysis	-6.373344569832072	Mining Graphs and Networks : 
+587.txt	cluster_analysis	-6.469448054400171	Graph Pattern Mining : 
+588.txt	cluster_analysis	-6.5710353014597365	Statistical Modeling of Networks : 
+589.txt	cluster_analysis	-6.386327792772374	Data Cleaning, Integration, and Validation by Information Network Analysis : 
+590.txt	cluster_analysis	-6.477269387093756	Clustering and Classification of Graphs and Homogeneous Networks : 
+591.txt	cluster_analysis	-6.312792116460742	Clustering, Ranking, and Classification of Heterogeneous Networks : 
+592.txt	cluster_analysis	-6.331363959432982	Role Discovery and Link Prediction in Information Networks : 
+593.txt	cluster_analysis	-6.4749639778445545	Similarity Search and OLAP in Information Networks : 
+594.txt	cluster_analysis	-6.598814081199267	Evolution of Social and Information Networks : 
+595.txt	cluster_analysis	-6.57820693570029	Mining Other Kinds of Data : 
+596.txt	cluster_analysis	-6.496747030788773	Mining Spatial Data : 
+597.txt	cluster_analysis	-6.935227922421296	Mining Spatiotemporal Data and Moving Objects : 
+598.txt	cluster_analysis	-6.501462863063692	Mining Cyber-Physical System Data : 
+599.txt	cluster_analysis	-6.475338309369927	Mining Multimedia Data : 
+600.txt	cluster_analysis	-6.588523662661907	Mining Text Data : 
+601.txt	cluster_analysis	-6.440949859199758	Mining Web Data : 
+602.txt	cluster_analysis	-6.452855783197871	Mining Data Streams : 
+603.txt	cluster_analysis	-6.694223093467763	Other Methodologies of Data Mining : 
+604.txt	cluster_analysis	-6.4946683134099095	Statistical Data Mining : 
+605.txt	cluster_analysis	-6.50835267317028	Analysis of variance: 
+606.txt	cluster_analysis	-6.3433224738298986	Discriminant analysis: 
+607.txt	cluster_analysis	-6.116286354746554	Views on Data Mining Foundations : 
+608.txt	cluster_analysis	-6.509440880422776	Microeconomic view: 
+609.txt	cluster_analysis	-6.51709492889782	Pattern discovery and inductive databases: 
+610.txt	cluster_analysis	-6.258427136920299	Visual and Audio Data Mining : 
+611.txt	cluster_analysis	-6.679042239891089	Data Mining Applications : 
+612.txt	cluster_analysis	-6.706531075876788	Data Mining for Financial Data Analysis : 
+613.txt	cluster_analysis	-7.07749442971094	Intrusion Detection and Prevention : 
+614.txt	cluster_analysis	-6.241122810106865	Science and Engineering : 
+615.txt	cluster_analysis	-6.418697878794858	Detection of money laundering and other financial crimes: 
+616.txt	cluster_analysis	-6.4455419784696595	Data Mining for Retail and Telecommunication Industries : 
+617.txt	cluster_analysis	-6.081437533587803	Analysis of the effectiveness of sales campaigns: 
+618.txt	cluster_analysis	-6.330658763558087	Data Mining in Science and Engineering : 
+619.txt	cluster_analysis	-6.39873250088667	Data Mining for Intrusion Detection and Prevention : 
+620.txt	cluster_analysis	-6.088573504613776	Anomaly-based detection: 
+621.txt	cluster_analysis	-7.51674722483765	Data Mining and Recommender Systems : 
+622.txt	cluster_analysis	-6.3595179842064296	Data Mining and Society : 
+623.txt	cluster_analysis	-5.97535578031005	Ubiquitous and Invisible Data Mining : 
+624.txt	cluster_analysis	-6.099298009088263	Privacy, Security, and Social Impacts of Data Mining : 
+625.txt	cluster_analysis	-6.358426100850239	Data Mining Trends : 
+626.txt	cluster_analysis	-6.225539382666363	Scalable and interactive data mining methods: 
+627.txt	cluster_analysis	-6.12094758824146	Mining biological and biomedical data: 
+628.txt	cluster_analysis	-6.384948526129011	Summary : 
+629.txt	cluster_analysis	-6.603986641978953	Exercises : 
+630.txt	cluster_analysis	-6.589668773704941	13.2 : 
+631.txt	cluster_analysis	-6.8773528191452575	13.3 : 
+632.txt	cluster_analysis	-6.85396689588626	13.4 : 
+633.txt	cluster_analysis	-6.654421775771568	13.5 : 
+634.txt	cluster_analysis	-6.530005426451663	Exercises 627 : 
+635.txt	cluster_analysis	-6.553556628696595	13.7 : 
+636.txt	cluster_analysis	-6.555791879041997	13.8 : 
+637.txt	cluster_analysis	-6.559425401152533	13.9 : 
+638.txt	cluster_analysis	-6.575630902262682	13.10 : 
+639.txt	cluster_analysis	-6.575402567692044	13.11 : 
+640.txt	cluster_analysis	-6.418918270556022	13.12 : 
+641.txt	cluster_analysis	-6.513732393912695	13.13 : 

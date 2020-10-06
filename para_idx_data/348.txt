@@ -1,0 +1,1 @@
+Classifier 1 p(r ≥ j|X) ≥ 0.5 , This score will then be compared with a set of trained α values to see which range the score is in. Then, using the range, we can decide which rating the object should receive. 

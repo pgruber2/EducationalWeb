@@ -1,0 +1,1 @@
+Often, push and pull modes are combined in a single system. Give an example of such an application. 

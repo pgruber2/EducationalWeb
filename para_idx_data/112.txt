@@ -1,0 +1,1 @@
+Here's a query and document vector. What is the score for the given document using dot product similarity? 

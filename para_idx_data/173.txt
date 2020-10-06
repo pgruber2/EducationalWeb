@@ -1,0 +1,1 @@
+What is the range of values (minimum and maximum scores) for the following measures?  (a) Can precision at five documents (P@5) ever be lower than P@10 for the same ranked list?  

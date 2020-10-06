@@ -1,0 +1,1 @@
+While bitwise encoding can achieve a very high compression ratio due to its finegrained distribution model, its downside is the amount of processing that is re- 

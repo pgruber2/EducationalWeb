@@ -1,0 +1,1 @@
+Design a text information system used to explore musical artists. For example, you can search for an artist's name directly. The results are displayed as a graph, with edges to similar artists (as measured by some similarity algorithm). Use TIS access mode vocabulary to describe this system and any enhancements you could make to satisfy different information needs. 

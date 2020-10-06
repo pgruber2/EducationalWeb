@@ -1,0 +1,1 @@
+How the α and β parameters affect the shape of the Beta distribution. Shown from left to right are the unimodal Beta (α, β > 1), the sparse Beta (α, β < 1), and the symmetric Beta (α = β) 

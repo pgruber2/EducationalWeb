@@ -1,0 +1,1 @@
+Give three additional commonly used statistical measures that are not already illustrated in this chapter for the characterization of data dispersion. Discuss how they can be computed efficiently in large databases. 

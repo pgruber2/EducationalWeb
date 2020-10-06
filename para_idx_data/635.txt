@@ -1,0 +1,1 @@
+There is a strong linkage between statistical data analysis and data mining. Some people think of data mining as automated and scalable methods for statistical data analysis. Do you agree or disagree with this perception? Present one statistical analysis method that can be automated and/or scaled up nicely by integration with current data mining methodology. 

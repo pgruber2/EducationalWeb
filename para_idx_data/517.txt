@@ -1,0 +1,1 @@
+Describe each of the following clustering algorithms in terms of the following criteria: (1) shapes of clusters that can be determined; (2) input parameters that must be specified; and (3) limitations. (a) k-means 

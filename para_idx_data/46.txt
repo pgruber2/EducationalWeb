@@ -1,0 +1,1 @@
+A unigram language model as defined in this chapter can take a sequence of words as input and output its probability. Explain how this calculation has strong independence assumptions. 

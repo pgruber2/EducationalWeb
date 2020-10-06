@@ -1,0 +1,1 @@
+Prove that in DBSCAN, the density-connectedness is an equivalence relation. 

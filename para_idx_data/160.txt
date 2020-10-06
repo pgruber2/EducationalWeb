@@ -1,0 +1,1 @@
+Let's return to Figure 9.1. Which set of results is better-system A's or system B's? We can now discuss how to actually quantify their performance. Suppose we have a total of ten relevant documents in the corpus for the current query, Q 1 . Of course, the relevance judgements shown on the right did not include all the ten. 

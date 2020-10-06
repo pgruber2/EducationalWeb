@@ -1,0 +1,1 @@
+In what kinds of queries do we probably not care about query term frequency? 

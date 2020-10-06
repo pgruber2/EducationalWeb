@@ -1,0 +1,1 @@
+Complete-link merges the two clusters with the smallest maximum distance between elements. This results in very "tight" and "compact" clusters since the cluster diameter is kept small (i.e., the distance between all elements low). 

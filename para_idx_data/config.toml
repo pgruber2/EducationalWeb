@@ -1,0 +1,20 @@
+index = "paras_nohead"
+prefix = "/Users/bhavya/Documents/explanation/UI"
+corpus = "file.toml"
+dataset = "para_idx_data"
+query-judgements = "slide-qrels.txt"
+
+[query-runner]
+timeout = 120
+query-path = "slide-queries.txt"
+query-id-start = 1
+
+[[analyzers]]
+ngram = 1
+method = "ngram-word"
+
+[[analyzers.filter]]
+type = "icu-tokenizer"
+
+[[analyzers.filter]]
+type = "lowercase"

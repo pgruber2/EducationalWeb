@@ -1,0 +1,1 @@
+If there is a cannot-link constraint on objects x and y, but they are assigned to a common center, c, then the constraint is violated. 

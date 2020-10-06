@@ -1,0 +1,1 @@
+Dirichlet prior smoothing is one particular smoothing method that follows the general smoothing scheme mentioned in the previous section. In particular, Plugging these into equation C.1, we see that with Dirichlet prior smoothing, our 

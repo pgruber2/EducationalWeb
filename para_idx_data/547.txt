@@ -1,0 +1,1 @@
+"How can we measure the similarity or distance between two vertices in a graph?" In our discussion, we examine two types of measures: geodesic distance and distance based on random walk. 

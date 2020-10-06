@@ -1,0 +1,1 @@
+Outline a method to disambiguate homographs (two words that are spelled the same) based on search engine logs. For example, how can we distinguish a financial institution bank and a river bank based on these logs? 

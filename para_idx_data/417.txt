@@ -1,0 +1,1 @@
+An ordinal attribute is an attribute with possible values that have a meaningful order or ranking among them, but the magnitude between successive values is not known. 

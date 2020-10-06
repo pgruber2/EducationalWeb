@@ -1,0 +1,1 @@
+In this section, we will explain how to evaluate text retrieval systems when there are multiple levels of relevance judgments. So far we discussed about binary judgements-that means a documents is judged as being relevant or non-relevant. 

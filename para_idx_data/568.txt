@@ -1,0 +1,1 @@
+Compare the MaPle algorithm (Section 11.2.3) with the frequent closed itemset mining algorithm, CLOSET (Pei,Han,and Mao [PHM00]). What are the major similarities and differences? 

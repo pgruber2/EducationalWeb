@@ -1,0 +1,1 @@
+Add a generate function to the language model. It should take a context (n − 1 terms) and generate the n th term. Use the calculation described in this chapter to generate the next word. 

@@ -1,0 +1,1 @@
+Sketch an idea about how you could use PLSA to model topical trends over time, given a dataset of documents that are tagged with dates. 

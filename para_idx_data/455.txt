@@ -1,0 +1,1 @@
+Briefly outline how to compute the dissimilarity between objects described by the following: (a) Compute the Euclidean distance between the two objects. (b) Compute the Manhattan distance between the two objects. (c) Compute the Minkowski distance between the two objects, using q = 3. (d) Compute the supremum distance between the two objects. 

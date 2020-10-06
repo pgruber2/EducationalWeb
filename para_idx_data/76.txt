@@ -1,0 +1,1 @@
+Given search engine user logs, how could you distinguish between browsing behavior and querying behavior? 

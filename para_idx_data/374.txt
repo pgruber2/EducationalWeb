@@ -1,0 +1,1 @@
+Relational databases are able to support many different applications via a set of common operators as defined in a query language such as SQL. Similarly, we may identify a common set of operators for supporting text analysis. In this section, we discuss some possibilities of defining text analysis operators. 

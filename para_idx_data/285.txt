@@ -1,0 +1,1 @@
+In an application setting, you must choose between using Naive Bayes or k-NN in order to do classification on text documents. Your application demands a very high performance and needs to classify documents very quickly. Explain your choice of classifier in this setting. 

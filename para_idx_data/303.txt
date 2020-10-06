@@ -1,0 +1,1 @@
+With your passage search engine, find a representative sentence from each passage to create a summary for the original document. 

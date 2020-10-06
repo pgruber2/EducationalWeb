@@ -1,0 +1,1 @@
+A product may be involved in multiple clusters, or may not be involved in any cluster. Biclustering can be applied to customer-product matrices to mine clusters satisfying these requirements. 

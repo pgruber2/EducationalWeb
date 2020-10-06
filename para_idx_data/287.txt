@@ -1,0 +1,1 @@
+Why is Naive Bayes "naive", and why is "Bayes" in the name? 15.8. Say we have a dataset and a classifier. We evaluate the classifier with 5-fold cross validation and 10-fold cross validation. Which do you think gives a higher accuracy? Why? 15.9. What is a difference between text categorization evaluation and information retrieval evaluation? 

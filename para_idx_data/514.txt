@@ -1,0 +1,1 @@
+Present conditions under which density-based clustering is more suitable than partitioning-based clustering and hierarchical clustering. Give application examples to support your argument. 

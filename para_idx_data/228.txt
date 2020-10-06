@@ -1,0 +1,1 @@
+I(X w1 ; X w2 ) = Presence and absence of w1: p(X w1 = 1) + p(X w1 = 0) = 1 Presence and absence of w2: p(X w2 = 1) + p(X w2 = 0) = 1 Both w1 and w2 occur Co-occurrences of w1 and w2: Only w1 occurs Only w2 occurs None of them occurs 

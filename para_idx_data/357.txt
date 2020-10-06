@@ -1,0 +1,1 @@
+In this section, we briefly introduce a specific technique for contextual text mining called Contextual Probabilistic Latent Semantic Analysis (CPLSA). CPLSA is an extension of PLSA to incorporate context variables into a generative model so that both the selection of topics and the topic word distributions can depend on the context associated with text. 

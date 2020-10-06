@@ -1,0 +1,1 @@
+Both k-means and k-medoids algorithms can perform effective clustering. (a) Illustrate the strength and weakness of k-means in comparison with k-medoids. (b) Illustrate the strength and weakness of these schemes in comparison with a hierarchical clustering scheme (e.g., AGNES). 
