@@ -1,5 +1,7 @@
 # EducationalWeb
 
+The following instructions have been tested with Python2.7 on Linux and MacOS
+
 1. You should have ElasticSearch installed and running -- https://www.elastic.co/guide/en/elasticsearch/reference/current/targz.html
 
 2. Create the index in ElasticSearch using create_es_index.py
@@ -13,4 +15,6 @@
 5. From `EducationalWeb/pdf.js/build/generic/web` , run the following command: `gulp server`
 
 6. In another terminal window, run `python app.py` from `EducationalWeb/`
+
+7. The site should be available at http://localhost:8096/
 
