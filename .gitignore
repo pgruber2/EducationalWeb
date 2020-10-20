@@ -3,3 +3,4 @@ pdf.js/static/slides/*
 *.pyc
 static/tf_idf_outputs/*
 .vscode/*
+log/*
