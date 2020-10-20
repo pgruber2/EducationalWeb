@@ -4,3 +4,5 @@ pdf.js/static/slides/*
 static/tf_idf_outputs/*
 .vscode/*
 log/*
+node_modules/*
+__pycache__/*
