@@ -399,31 +399,33 @@ def get_search_results(search):
     for r in top_docs:
 
         comp = r.split("##")
-
-        lectures = sort_slide_names(os.listdir(os.path.join(slides_path, comp[0])))
-        lname = "----".join(comp[1:-1])
         try:
-            lnos.append(lectures.index(lname))
-        except ValueError:  # not an "actual" slide
-            continue
+            lectures = sort_slide_names(os.listdir(os.path.join(slides_path, comp[0])))
+            lname = "----".join(comp[1:-1])
+            try:
+                lnos.append(lectures.index(lname))
+            except ValueError:  # not an "actual" slide
+                continue
 
-        if len(results) < 10:
-            disp_strs.append(
-                " ".join(comp[0].replace("_", "-").split("-")).title()
-                + " : "
-                + trim_name(
-                    " ".join(
-                        comp[-2].replace(".txt", "").replace("_", "-").split("-")
-                    ).title()
+            if len(results) < 10:
+                disp_strs.append(
+                    " ".join(comp[0].replace("_", "-").split("-")).title()
+                    + " : "
+                    + trim_name(
+                        " ".join(
+                            comp[-2].replace(".txt", "").replace("_", "-").split("-")
+                        ).title()
+                    )
+                    + ", "
+                    + " ".join(comp[-1].replace(".pdf", "").split("-")).title()
                 )
-                + ", "
-                + " ".join(comp[-1].replace(".pdf", "").split("-")).title()
-            )
-            course_names.append(comp[0])
-            lec_names.append(lname)
+                course_names.append(comp[0])
+                lec_names.append(lname)
 
-            results.append(r)
-            snippets.append(get_snippet_sentences(r, search))
+                results.append(r)
+                snippets.append(get_snippet_sentences(r, search))
+        except OSError:
+            print("Could not load slide:", comp[0], r)
 
     for x in range(len(results)):
         results[x] = results[x].replace("##", "----") + ".pdf"
