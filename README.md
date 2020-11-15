@@ -11,6 +11,7 @@ make up
 2. Create the index in ElasticSearch by running 
 
 ```bash
+BASE_DIR="./piazza/downloads" SLEEP_OVERRIDE=1 ./piazza_downloader.py pgruber2@illinois.edu kdp8arjgvyj67l
 python create_es_index.py
 ```
 

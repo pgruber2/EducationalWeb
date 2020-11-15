@@ -6,3 +6,4 @@ static/tf_idf_outputs/*
 log/*
 node_modules/*
 __pycache__/*
+piazza/downloads*
