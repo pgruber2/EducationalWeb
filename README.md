@@ -15,6 +15,16 @@ BASE_DIR="./piazza/downloads" SLEEP_OVERRIDE=1 ./piazza_downloader.py pgruber2@i
 python create_es_index.py
 ```
 
+TODO: Currently create_es_index.py fails with Python 2.7
+```
+Traceback (most recent call last):
+  File "create_es_index.py", line 138, in <module>
+    main_piazza()
+  File "create_es_index.py", line 108, in main_piazza
+    except (UnicodeDecodeError, json.decoder.JSONDecodeError):
+AttributeError: 'module' object has no attribute 'JSONDecodeError'
+```
+
 3. Download tfidf_outputs.zip from here -- https://drive.google.com/file/d/19ia7CqaHnW3KKxASbnfs2clqRIgdTFiw/view?usp=sharing
    
    Unzip the file and place the folder under `EducationalWeb/static`
