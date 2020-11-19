@@ -16,13 +16,14 @@ if __name__ == "__main__":
     password = ""
     effective_sleep = DEFAULT_SLEEP
     import_dir = datetime.datetime.now().strftime("%Y_%m_%d")
+    base_dir = './downloads'
 
 
     try:
         email = sys.argv[1]
         password = os.environ.get('DOWNLOADER_PASSWORD')
         course_network = sys.argv[2]
-        base_dir = os.environ.get('BASE_DIR', '.')
+        base_dir = os.environ.get('BASE_DIR', base_dir)
         effective_sleep = int(os.environ.get('SLEEP_OVERRIDE', DEFAULT_SLEEP))
     except:
         sys.exit("Usage: piazza_downloader.py email course_id -- e.g. ./piazza_downloader.py piazza@org.edu kdp8arjgvyj67a")
@@ -42,17 +43,19 @@ if __name__ == "__main__":
     print("Posts:", str(len(cids)))
 
     # Output to files
+    existing_posts = os.listdir(effective_dir)
     for cid in cids:
         try:
-            file = effective_dir + "/post_" + str(cid) + ".json"
-            if os.path.isfile(file):
-                print("Skipping " + file + " as it was already downloaded...")
+            target_post = [x for x in existing_posts if cid in x]
+            if len(target_post) > 0:
+                print("Skipping " + cid + " as it was already downloaded...")
             else:
                 post = course.get_post(cid)
-                with open(effective_dir + "/post_" + str(cid) + ".json", 'w') as f:
+                file = effective_dir + "/post_" + str(post['nr']) + "_" + str(cid) + ".json"
+                with open(file, 'w') as f:
                     json.dump(post, f)
 
-                print("post_" + cid + ".json done")
+                print(file + " done")
 
                 time.sleep(effective_sleep)   # some report piazza servers tolerate 1 request per second
         except OSError as e:

@@ -5,6 +5,7 @@ import numpy as np
 import pickle
 from elasticsearch import Elasticsearch
 from ranker import *
+import piazza.piazza_post_parser
 
 
 main_path = os.path.dirname(os.path.realpath(__file__))
@@ -33,6 +34,9 @@ idx = metapy.index.make_inverted_index(cfg)
 mu = 2500
 alpha = 0.34
 ranker_obj = load_ranker(cfg, mu)
+
+# TODO: fix hardcoding
+piazza_path = os.path.join(main_path, "piazza/downloads/kdp8arjgvyj67l/2020_11_18")
 
 with open(cfg, "r") as fin:
     cfg_d = pytoml.load(fin)
@@ -374,6 +378,47 @@ def format_string(matchobj):
 
     return '<span style="background-color: #bddcf5">' + matchobj.group(0) + "</span>"
 
+def get_piazza_search_results(search):
+    posts = os.listdir(piazza_path)
+    top_docs = []
+    res = es.search(
+        index="piazza", body={"query": {"match": {"content": search}}}, size=50
+    )
+    for d in res["hits"]["hits"]:
+        top_docs.append(d[u"_source"][u"nr"])
+
+    type = []
+    results = []
+    disp_strs = []
+    course_names = []
+    snippets = []
+    lnos = []
+    top_slide_trim_names = []
+    lec_names = []
+    for r in list(dict.fromkeys(top_docs)): # TODO: Why are we getting duplicates?
+        try:
+            # TODO: Correctly index posts
+            target_post = [x for x in posts if x.startswith("post_"+str(r)+"_")][0]
+
+            mypost = piazza.piazza_post_parser.openpost(piazza_path + "/" + target_post)
+            try:
+                lnos.append(1)
+            except ValueError:
+                continue
+
+            disp_strs.append(mypost.entry.title)
+            # TODO: Fix hardcoding
+            course_names.append('kdp8arjgvyj67l')
+            lec_names.append("what goes get...It is a txt file orig")
+
+            results.append(r)
+            snippets.append(mypost.entry.get_full_normalized_text())
+            type.append("piazza")
+        except OSError:
+            print("Could not load slide:", comp[0], r)
+
+    return len(results), results, disp_strs, course_names, lnos, snippets, lec_names,type
+
 
 def get_search_results(search):
     # query = metapy.index.Document()
@@ -394,10 +439,10 @@ def get_search_results(search):
     course_names = []
     snippets = []
     lnos = []
+    type = []
     top_slide_trim_names = []
     lec_names = []
     for r in top_docs:
-
         comp = r.split("##")
         try:
             lectures = sort_slide_names(os.listdir(os.path.join(slides_path, comp[0])))
@@ -424,12 +469,13 @@ def get_search_results(search):
 
                 results.append(r)
                 snippets.append(get_snippet_sentences(r, search))
+                type.append("slide")
         except OSError:
             print("Could not load slide:", comp[0], r)
 
     for x in range(len(results)):
         results[x] = results[x].replace("##", "----") + ".pdf"
-    return len(results), results, disp_strs, course_names, lnos, snippets, lec_names
+    return len(results), results, disp_strs, course_names, lnos, snippets, lec_names, type
 
 
 def get_explanation(search_string, top_k=1):

@@ -473,21 +473,34 @@ def search_results(course_name=None, lno=None, slide_name=None, curr_slide=None)
         lnos,
         snippets,
         lec_names,
+        result_type
     ) = model.get_search_results(search_string)
-    if not results:
+
+    (
+        piazza_num_results,
+        piazza_results,
+        piazza_disp_strs,
+        piazza_search_course_names,
+        piazza_lnos,
+        piazza_snippets,
+        piazza_lec_names,
+        piazza_result_type
+    ) = model.get_piazza_search_results(search_string)
+    if not results or not piazza_results:
         num_results = 0
         results = []
     response = jsonify(
         {
-            "num_results": num_results,
-            "results": results,
-            "disp_strs": disp_strs,
-            "search_course_names": search_course_names,
-            "lnos": lnos,
+            "num_results": num_results + piazza_num_results,
+            "results": results + piazza_results,
+            "disp_strs": disp_strs + piazza_disp_strs,
+            "search_course_names": search_course_names + piazza_search_course_names,
+            "lnos": lnos + piazza_lnos,
             "course_names": COURSE_NAMES,
             "num_courses": NUM_COURSES,
-            "snippets": snippets,
-            "lec_names": lec_names,
+            "snippets": snippets + piazza_snippets,
+            "lec_names": lec_names + piazza_lec_names,
+            "result_type": result_type + piazza_result_type
         }
     )
     return response

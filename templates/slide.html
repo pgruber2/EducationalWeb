@@ -185,27 +185,45 @@ $(function() {
       h.innerHTML = 'Search Results';
       result_section.appendChild(h);
       for(i=0;i<data['num_results'];i++){
-        a = document.createElement('a');
-        a.setAttribute('href','{{base_url}}/search_slide/'+data['search_course_names'][i]+'/'+data['lnos'][i]+'/'+data['results'][i]);
-        // a.innerHTML = 'Test';
-        a.innerHTML = data['disp_strs'][i]
-        a.setAttribute('id','search_'+i)
-        a.setAttribute('class','search_res');
-        ['click','contextmenu'].forEach(function(e){a.addEventListener(e, function(){
-          searchLog(this.id);
-      } , true);})
+        if (data['result_type'][i] === "slide") {
+            a = document.createElement('a');
+            a.setAttribute('href', '{{base_url}}/search_slide/' + data['search_course_names'][i] + '/' + data['lnos'][i] + '/' + data['results'][i]);
+            // a.innerHTML = 'Test';
+            a.innerHTML = data['disp_strs'][i]
+            a.setAttribute('id', 'search_' + i)
+            a.setAttribute('class', 'search_res');
+            ['click', 'contextmenu'].forEach(function (e) {
+                a.addEventListener(e, function () {
+                    searchLog(this.id);
+                }, true);
+            })
+        } else if(data['result_type'][i] === "piazza") {
+            a = document.createElement('a');
+            a.setAttribute('href', 'https://piazza.com/class/' + data['search_course_names'][i] + '?cid=' + data['results'][i]);
+            a.setAttribute('target', '_blank');
+            // a.innerHTML = 'Test';
+            a.innerHTML = data['disp_strs'][i]
+            a.setAttribute('id', 'search_' + i)
+            a.setAttribute('class', 'search_res');
+            ['click', 'contextmenu'].forEach(function (e) {
+                a.addEventListener(e, function () {
+                    searchLog(this.id);
+                }, true);
+            })
+        }
 
         result_section.appendChild(a);
-       
 
-        $('#search_'+i).popover({
-          container: 'body',
-          trigger : 'hover',
-          html: true,
-          placement:'top',
-          title:"<embed type='application/pdf' id='search_slide' src={{pdf_url}}/static/slides/"+data['search_course_names'][i]+'/'+data['lec_names'][i]+'/'+data['results'][i] +"#toolbar=0&navpanes=0&scrollbar=0>"
-          
-        })
+        if (data['result_type'][i] === "slide") {
+            $('#search_' + i).popover({
+                container: 'body',
+                trigger: 'hover',
+                html: true,
+                placement: 'top',
+                title: "<embed type='application/pdf' id='search_slide' src={{pdf_url}}/static/slides/" + data['search_course_names'][i] + '/' + data['lec_names'][i] + '/' + data['results'][i] + "#toolbar=0&navpanes=0&scrollbar=0>"
+
+            })
+        }
         
 
         b = document.createElement('br');
