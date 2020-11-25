@@ -4,3 +4,4 @@ pytoml
 elasticsearch
 flask_socketio
 numpy
+rank-bm25
