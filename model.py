@@ -5,7 +5,6 @@ import numpy as np
 import pickle
 from elasticsearch import Elasticsearch
 from ranker import *
-import piazza.piazza_post_parser
 
 
 main_path = os.path.dirname(os.path.realpath(__file__))
@@ -34,6 +33,7 @@ idx = metapy.index.make_inverted_index(cfg)
 mu = 2500
 alpha = 0.34
 ranker_obj = load_ranker(cfg, mu)
+piazza_ranker_obj = load_ranker(os.path.join(main_path, "piazza/index", "config.toml"))
 
 # TODO: fix hardcoding
 piazza_path = os.path.join(main_path, "piazza/downloads/kdp8arjgvyj67l/2020_11_18")
@@ -378,14 +378,12 @@ def format_string(matchobj):
 
     return '<span style="background-color: #bddcf5">' + matchobj.group(0) + "</span>"
 
+
 def get_piazza_search_results(search):
     posts = os.listdir(piazza_path)
-    top_docs = []
     res = es.search(
         index="piazza", body={"query": {"match": {"content": search}}}, size=50
     )
-    for d in res["hits"]["hits"]:
-        top_docs.append(d[u"_source"][u"nr"])
 
     type = []
     results = []
@@ -393,31 +391,32 @@ def get_piazza_search_results(search):
     course_names = []
     snippets = []
     lnos = []
-    top_slide_trim_names = []
     lec_names = []
-    for r in list(dict.fromkeys(top_docs)): # TODO: Why are we getting duplicates?
+    for r in res["hits"]["hits"][:50]:
+
+        mypost = r.get("_source", {}).get("content", None)
+        nr = r.get("_source", {}).get("nr", None)
+        title = r.get("_source", {}).get("title", None)
+
+        # TODO: Correctly index posts
+        target_post = [x for x in posts if x.startswith("post_"+str(nr)+"_")][0]
+
+        results.append(nr)
+
         try:
-            # TODO: Correctly index posts
-            target_post = [x for x in posts if x.startswith("post_"+str(r)+"_")][0]
+            lnos.append(1)
+        except ValueError:
+            continue
 
-            mypost = piazza.piazza_post_parser.openpost(piazza_path + "/" + target_post)
-            try:
-                lnos.append(1)
-            except ValueError:
-                continue
+        disp_strs.append(title)
+        # TODO: Fix hardcoding
+        course_names.append('kdp8arjgvyj67l')
+        lec_names.append("what goes get...It is a txt file orig")
 
-            disp_strs.append(mypost.entry.title)
-            # TODO: Fix hardcoding
-            course_names.append('kdp8arjgvyj67l')
-            lec_names.append("what goes get...It is a txt file orig")
+        snippets.append(mypost)
+        type.append("piazza")
 
-            results.append(r)
-            snippets.append(mypost.entry.get_full_normalized_text())
-            type.append("piazza")
-        except OSError:
-            print("Could not load slide:", comp[0], r)
-
-    return len(results), results, disp_strs, course_names, lnos, snippets, lec_names,type
+    return len(results), results, disp_strs, course_names, lnos, snippets, lec_names, type
 
 
 def get_search_results(search):
@@ -479,24 +478,16 @@ def get_search_results(search):
 
 
 def get_explanation(search_string, top_k=1):
+
     query = metapy.index.Document()
     query.content(search_string)
-    print(query)
-    # score2(ranker,idx,query)
-    file_id_tups, fn_dict = score2(ranker_obj, idx, query, top_k, alpha)
-    # print(file_id_tups,fn_dict)
-    explanation = ""
-    file_names = []
-    for fn, _ in sorted(fn_dict.items(), key=lambda k: k[1], reverse=True)[:top_k]:
-        with open(os.path.join(paras_folder, fn), "r") as f:
-            explanation += f.read().strip()
-            file_names.append(fn)
-    formatted_exp = explanation
-    for w in search_string.lower().split():
-        (sub_str, cnt) = re.subn(
-            re.compile(r"\b{}\b".format(w), re.I), format_string, formatted_exp
-        )
-        if cnt > 0:
-            formatted_exp = sub_str
-    return formatted_exp, "#".join(file_names)
+    documents = score2(ranker_obj, query, top_k, alpha)
 
+    explanation = []
+    file_names = []
+    for doc in documents:
+        with open(os.path.join(paras_folder, doc), "r") as f:
+            explanation.append(f.read().strip())
+            file_names.append(doc)
+
+    return explanation, file_names

@@ -1,10 +1,26 @@
 import math
 import sys
+import os
 import time
 import metapy
 import pytoml
 import numpy as np
 import random
+
+from rank_bm25 import BM25Okapi
+
+
+def tokenizer(doc):
+    # prepare the tokenizer;
+    tok = metapy.analyzers.ICUTokenizer(suppress_tags=True)
+    tok = metapy.analyzers.LengthFilter(tok, min=2, max=50)
+    tok = metapy.analyzers.LowercaseFilter(tok)
+    tok = metapy.analyzers.Porter2Filter(tok)
+    tok = metapy.analyzers.ListFilter(tok, "lemur-stopwords.txt", metapy.analyzers.ListFilter.Type.Reject)
+    # set the content;
+    tok.set_content(doc.content())
+    # return tokenized document;
+    return [token for token in tok]
 
 
 def load_ranker(cfg_file, mu):
@@ -14,39 +30,38 @@ def load_ranker(cfg_file, mu):
     configuration file used to load the index.
     """
 
-    # return metapy.index.JelinekMercer(0.5)
-    return metapy.index.DirichletPrior(mu)
+    # parse the dataset file;
+    path = cfg_file[:cfg_file.rfind("/")]
+    data_files = set()
+    corpus = []
+    idx = []
+    with open(f"{path}/dataset-full-corpus.txt", "r") as fh:
+        for line in fh:
+            line = line[:-1]
+            _, file = line.split(" ")
+            data_files.add(file)
+
+    # get all the documents in the dataset and tokenize them accordingly;
+    for file in data_files:
+        with open(os.path.join(path, file), "r") as fh:
+            data = fh.read().strip()
+            doc = metapy.index.Document()
+            doc.content(data)
+            res = tokenizer(doc)
+            corpus.append(res)
+            idx.append(file)
+
+    return {
+        "ranker": BM25Okapi(corpus),
+        "idx": idx,
+    }
 
 
-def score2(ranker, index, query, top_k, alpha):
-    print("Scoring")
-    # print("start")
-    results = ranker.score(index, query, 1000)
-    print(results[:20])
-    for res in results[:20]:
-        doc_name = index.metadata(res[0]).get("doc_name")
-        # print(doc_name,res[1])
-
-    new_results = []
-    new_scores = []
-    updated_results = {}
-    alpha = alpha  # all, 2500, 0.13, 0.666
-    for res in results:
-        doc_name = index.metadata(res[0]).get("doc_name")
-        # print(doc_name)
-        # print(float(index.metadata(res[0]).get('prior')))
-        updated_results[doc_name] = (1 - alpha) * res[1] + alpha * float(
-            index.metadata(res[0]).get("prior")
-        )
-        new_scores.append(updated_results[doc_name])
-
-    # print (sorted(updated_results.items(),key=lambda k:k[1],reverse=True)[:])
-
-    new_idx = np.argsort(np.array(new_scores))[::-1][:top_k]
-
-    for idx in new_idx:
-        new_results.append((results[idx][0], new_scores[idx]))
-    return new_results, updated_results
+def score2(ranker, query, top_k, alpha):
+    print("Scoring...")
+    results = ranker["ranker"].get_top_n(tokenizer(query), ranker["idx"], n=top_k)
+    print("Done...")
+    return results
 
 
 def score1(ranker, index, query, top_k):
