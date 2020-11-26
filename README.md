@@ -40,6 +40,7 @@ gulp server
 7. Install python dependencies
 
 ```bash
+wget -nc https://raw.githubusercontent.com/meta-toolkit/meta/master/data/lemur-stopwords.txt
 pip install -r requirements.txt
 ```
 

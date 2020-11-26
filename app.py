@@ -436,10 +436,31 @@ def socket_connection(course_name=None, lno=None, slide_name=None, curr_slide=No
 
 @app.route("/search", methods=["POST"])
 def results(course_name=None, lno=None, slide_name=None, curr_slide=None):
-    data = json.loads(request.data.decode("utf-8"))
-    # print(1,1,data)
-    querytext = data["searchString"]
+    querytext = request.json.get("searchString", None)
+    if not querytext:
+        return jsonify({})
     explanation, file_names = model.get_explanation(querytext)
+    if explanation == "":
+        num_results = 0
+    else:
+        num_results = 1
+    response = jsonify(
+        {
+            "num_results": num_results,
+            "explanation": explanation,
+            "file_names": file_names,
+        }
+    )
+    # print(response)
+    return response
+
+
+@app.route("/rank_piazza", methods=["POST"])
+def piazza_results(course_name=None, lno=None, slide_name=None, curr_slide=None):
+    querytext = request.json.get("searchString", None)
+    if not querytext:
+        return jsonify({})
+    explanation, file_names = model.get_explanation(querytext, top_k=20)
     if explanation == "":
         num_results = 0
     else:
@@ -573,4 +594,3 @@ def log_action():
 
 if __name__ == "__main__":
     socketio.run(app, host="localhost", port=8096)
-

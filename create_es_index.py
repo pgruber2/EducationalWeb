@@ -4,6 +4,7 @@ import json
 from elasticsearch import Elasticsearch
 from elasticsearch import helpers
 import io
+from piazza.piazza_post_parser import openpost as open_piazza_post
 
 es = Elasticsearch([
     {'host': '127.0.0.1', 'port': 9200}
@@ -22,11 +23,15 @@ def gendata(idx_dict):
 
 def gendata_piazza(items):
 
-    for i, (post, nr) in enumerate(items):
+    for item in items:
         yield {
             "_index": "piazza",
-            "_id": i,
-            "_source": {"nr": nr, "content": post},
+            "_id": item.get("nr"),
+            "_source": {
+                "nr": item.get("nr"),
+                "content": item.get("post"),
+                "title": item.get("title"),
+            },
         }
 
 
@@ -67,70 +72,49 @@ def main():
     helpers.bulk(es, gendata(dict(zip(lab, cnt))))
 
 
-def parse_post(post):
-    posts = []
-
-    nr = post.get("nr", -1)
-    children = post.get("children", [])
-
-    if "history" in post:
-        post = post["history"][-1]
-
-    subject = BeautifulSoup(post.get("subject", ""), "lxml").text.strip().replace('\n', ' ').replace('\r', '')
-    content = BeautifulSoup(post.get("content", ""), "lxml").text.strip().replace('\n', ' ').replace('\r', '')
-
-    if subject:
-        posts.append(subject)
-    if content:
-        posts.append(content)
-
-    for child in children:
-        new_nr, new_posts = parse_post(child)
-        posts.extend(new_posts)
-        if new_nr > nr:
-            nr = new_nr
-
-    return nr, posts
-
-
 def main_piazza():
-    all_posts = []
-    all_nrs = []
+    # process the entire Piazza download directory and get all the relevant content;
+    posts = []
     for (dirpath, dirnames, filenames) in os.walk("./piazza/downloads"):
+
         for file in filenames:
             path = os.path.join(dirpath, file)
             try:
-                with open(path, "r") as fh:
-                    nr, posts = parse_post(json.loads(fh.read()))
-                    nr = [nr for it in range(len(posts))]
-                    all_posts.extend(posts)
-                    all_nrs.extend(nr)
-            except (UnicodeDecodeError, json.decoder.JSONDecodeError):
+                post = open_piazza_post(path)
+            except:
+                print(f"[ERROR] {path} not a valid file.")
                 continue
+            posts.append({
+                "title":  post.entry.title,
+                "post": " ".join(post.entry.get_full_normalized_text()),
+                "nr": post.entry.id,
+            })
+            create_index_dataset(posts[-1])
 
     # check piazza count, if the index exists;
     try:
         print(es.count(index="piazza")["count"])
-        if es.count(index="piazza")["count"] == len(all_posts):
+        if es.count(index="piazza")["count"] >= len(posts):
             print("Noting to do for piazza. Moving on...")
             return
     except:
         pass
 
     # add piazza content;
-    if len(all_posts) > 0:
+    if len(posts) > 0:
         es.indices.create(
             index="piazza",
             body={
                 "mappings": {
                     "properties": {
                         "nr": {"type": "integer"},
-                        "content": {"type": "text", "analyzer": "english"},
+                        "content": {"type": "text"},
+                        "title": {"type": "text"}
                     }
                 }
             },
         )
-        helpers.bulk(es, gendata_piazza(zip(all_posts, all_nrs)))
+        helpers.bulk(es, gendata_piazza(posts))
 
 
 if __name__ == "__main__":
