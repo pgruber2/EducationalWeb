@@ -23,7 +23,7 @@ def tokenizer(doc):
     return [token for token in tok]
 
 
-def load_ranker(cfg_file, mu):
+def load_ranker(cfg_file):
     """
     Use this function to return the Ranker object to evaluate, 
     The parameter to this function, cfg_file, is the path to a
@@ -35,6 +35,9 @@ def load_ranker(cfg_file, mu):
     data_files = set()
     corpus = []
     idx = []
+
+    print(f"Loading ranker '{path}/dataset-full-corpus.txt'.")
+
     with open(f"{path}/dataset-full-corpus.txt", "r") as fh:
         for line in fh:
             line = line[:-1]
@@ -54,6 +57,7 @@ def load_ranker(cfg_file, mu):
     return {
         "ranker": BM25Okapi(corpus),
         "idx": idx,
+        "path": path,
     }
 
 

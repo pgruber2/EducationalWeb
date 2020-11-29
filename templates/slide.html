@@ -237,7 +237,24 @@
   });
 
   $(document).ready(function () {
-    console.log("a");
+    $.ajax({
+      type: "POST",
+      url: "/rank_piazza",
+      contentType: "application/json;charset=utf-8",
+      data: JSON.stringify({ 'searchString': '{{slide_content}}' }),
+      success: function(data){
+        var elem = $("#related-piazza");
+        var content = "<ul>";
+        for(var it in data.documents){
+          // TODO: fix class hardcoding;
+          content += `<li><a href="https://piazza.com/class/kdp8arjgvyj67l?cid=${data.documents[it].nr}">${data.documents[it].title}</a></li>`;
+          if(it >= 3)
+            break;
+        }
+        console.log(content + "</ul>");
+        elem.html(content);
+      },
+    });
   });
 
 </script>
@@ -275,7 +292,7 @@
 
         <h2>Related slides</h2>
 
-        {% for i in range(num_related_slides) %}
+        {% for i in range(4) %}
         <li>
           <a href="{{base_url}}/related_slide/{{related_course_names[i]}}/{{rel_lnos[i]}}/{{related_slides[i]}}"
             id="{{i}}" class="related" data-toggle="popover" style="color:{{disp_color[i]}};"
@@ -283,6 +300,10 @@
           </a>
         </li>
         {% endfor %}
+
+        <h2>Related Piazza posts</h2>
+
+        <div id="related-piazza"></div>
 
       </ul>
     </div>

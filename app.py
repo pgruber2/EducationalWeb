@@ -37,6 +37,24 @@ MAX_HIST = 50
 IS_LOCAL_SRV = True
 
 
+def get_slide_content(slide_name):
+
+    ss = slide_name.replace("----", "##")
+    ss = ss[:ss.rfind(".")]
+    res = model.es.search(
+        index="slides",
+        body={
+            "query": {
+                "bool": {
+                    "must": {"match": {"label": ss} }
+                }
+            }
+        },
+        size=50
+    )
+    return res.get("hits", {}).get("hits", [])[0].get("_source", {}).get("content")
+
+
 def crossdomain(
     origin=None,
     methods=None,
@@ -203,6 +221,7 @@ def slide(course_name, lno):
 
     return render_template(
         "slide.html",
+        slide_content=get_slide_content(next_slide_name),
         slide_name=next_slide_name,
         course_name=course_name,
         num_related_slides=num_related_slides,
@@ -253,6 +272,7 @@ def related_slide(course_name, slide_name, lno):
 
     return render_template(
         "slide.html",
+        slide_content=get_slide_content(slide_name),
         slide_name=next_slide_name,
         course_name=course_name,
         num_related_slides=num_related_slides,
@@ -305,6 +325,7 @@ def next_slide(course_name, lno, curr_slide):
     if next_slide_name is not None:
         return render_template(
             "slide.html",
+            slide_content=get_slide_content(next_slide_name),
             slide_name=next_slide_name,
             course_name=course_name,
             num_related_slides=num_related_slides,
@@ -366,6 +387,7 @@ def prev_slide(course_name, lno, curr_slide):
     if prev_slide_name is not None:
         return render_template(
             "slide.html",
+            slide_content=get_slide_content(prev_slide_name),
             slide_name=prev_slide_name,
             course_name=course_name,
             num_related_slides=num_related_slides,
@@ -460,18 +482,10 @@ def piazza_results(course_name=None, lno=None, slide_name=None, curr_slide=None)
     querytext = request.json.get("searchString", None)
     if not querytext:
         return jsonify({})
-    explanation, file_names = model.get_explanation(querytext, top_k=20)
-    if explanation == "":
-        num_results = 0
-    else:
-        num_results = 1
-    response = jsonify(
-        {
-            "num_results": num_results,
-            "explanation": explanation,
-            "file_names": file_names,
-        }
-    )
+    documents = model.get_piazza_post(querytext, top_k=20)
+    response = jsonify({
+        "documents": documents,
+    })
     # print(response)
     return response
 
@@ -507,9 +521,11 @@ def search_results(course_name=None, lno=None, slide_name=None, curr_slide=None)
         piazza_lec_names,
         piazza_result_type
     ) = model.get_piazza_search_results(search_string)
+
     if not results or not piazza_results:
         num_results = 0
         results = []
+
     response = jsonify(
         {
             "num_results": num_results + piazza_num_results,
