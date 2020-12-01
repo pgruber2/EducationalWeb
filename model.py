@@ -30,10 +30,9 @@ slide_titles = [t.strip() for t in slide_titles]
 title_mapping = dict(zip(slide_names, slide_titles))
 print("Building or loading index...")
 idx = metapy.index.make_inverted_index(cfg)
-mu = 2500
 alpha = 0.34
-ranker_obj = load_ranker(cfg, mu)
-piazza_ranker_obj = load_ranker(os.path.join(main_path, "piazza/index", "config.toml"))
+ranker_obj = load_ranker(cfg)
+piazza_ranker_obj = load_ranker(os.path.join(main_path, "piazza/index/"))
 
 # TODO: fix hardcoding
 piazza_path = os.path.join(main_path, "piazza/downloads/kdp8arjgvyj67l/2020_11_18")
@@ -477,7 +476,7 @@ def get_search_results(search):
     return len(results), results, disp_strs, course_names, lnos, snippets, lec_names, type
 
 
-def get_explanation(search_string, top_k=1):
+def get_explanation(search_string, top_k=1, ranker="explaination"):
 
     query = metapy.index.Document()
     query.content(search_string)
@@ -486,8 +485,23 @@ def get_explanation(search_string, top_k=1):
     explanation = []
     file_names = []
     for doc in documents:
-        with open(os.path.join(paras_folder, doc), "r") as f:
+        with open(os.path.join(ranker_obj.get("path"), doc), "r") as f:
             explanation.append(f.read().strip())
             file_names.append(doc)
 
     return explanation, file_names
+
+
+def get_piazza_post(search_string, top_k=1):
+
+    query = metapy.index.Document()
+    query.content(search_string)
+    documents = score2(piazza_ranker_obj, query, top_k, alpha)
+
+    docs = []
+    for doc in documents:
+        doc = int(doc[:doc.rfind(".")])
+        res = es.get(index="piazza", id=doc, doc_type="_all")
+        docs.append(res.get("_source", {}))
+
+    return docs

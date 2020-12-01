@@ -7,4 +7,5 @@ log/*
 node_modules/*
 __pycache__/*
 piazza/downloads*
+piazza/index*
 lemur-stopwords.txt

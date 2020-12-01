@@ -72,7 +72,23 @@ def main():
     helpers.bulk(es, gendata(dict(zip(lab, cnt))))
 
 
+def create_index_dataset(post):
+
+    content = f"{post.get('title')} {post.get('post')}"
+    with open(f"./piazza/index/{post.get('nr')}.txt", "w+") as fh:
+        fh.write(content)
+    return f"{post.get('nr')}.txt"
+
+
 def main_piazza():
+
+    # create the index folder;
+    try:
+        os.mkdir("./piazza/index")
+    except FileExistsError:
+        pass
+    f_index = open("./piazza/index/dataset-full-corpus.txt", "w+")
+
     # process the entire Piazza download directory and get all the relevant content;
     posts = []
     for (dirpath, dirnames, filenames) in os.walk("./piazza/downloads"):
@@ -89,7 +105,10 @@ def main_piazza():
                 "post": " ".join(post.entry.get_full_normalized_text()),
                 "nr": post.entry.id,
             })
-            create_index_dataset(posts[-1])
+            index_file = create_index_dataset(posts[-1])
+            f_index.write(f"[None] {index_file}\n")
+
+    f_index.close()
 
     # check piazza count, if the index exists;
     try:
