@@ -1,6 +1,6 @@
 # EducationalWeb
 
-The following instructions have been tested with Python 3.5 on MacOS
+Use Python 3.7 or comparable.
 
 1. Install and run ElsticSearch
 

@@ -1,6 +1,4 @@
 import os
-from bs4 import BeautifulSoup
-import json
 from elasticsearch import Elasticsearch
 from elasticsearch import helpers
 import io
