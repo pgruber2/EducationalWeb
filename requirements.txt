@@ -5,3 +5,4 @@ elasticsearch
 flask_socketio
 numpy
 rank-bm25
+piazza_api
