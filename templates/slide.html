@@ -184,7 +184,7 @@
               a = document.createElement('a');
               a.setAttribute('href', '{{base_url}}/search_slide/' + data['search_course_names'][i] + '/' + data['lnos'][i] + '/' + data['results'][i]);
               // a.innerHTML = 'Test';
-              a.innerHTML = data['disp_strs'][i]
+              a.innerHTML = data['disp_strs'][i]  + " -- score: " + data['supplementary'][i]['score']
               a.setAttribute('id', 'search_' + i)
               a.setAttribute('class', 'search_res');
               ['click', 'contextmenu'].forEach(function (e) {
@@ -196,8 +196,17 @@
               a = document.createElement('a');
               a.setAttribute('href', 'https://piazza.com/class/' + data['search_course_names'][i] + '?cid=' + data['results'][i]);
               a.setAttribute('target', '_blank');
-              // a.innerHTML = 'Test';
-              a.innerHTML = data['disp_strs'][i]
+              metrics = ""
+              if (data['supplementary'][i]['instructor_answer']) {
+                metrics += " -- Teacher Answer!"
+              }
+              if (data['supplementary'][i]['endorsements']) {
+                metrics += " -- Endorsed!"
+              }
+              if (data['supplementary'][i]['student_answer']) {
+                metrics += " -- Student Answer!"
+              }
+              a.innerHTML = "Piazza: " + data['supplementary'][i]['title'] + metrics + " --  score: " + data['supplementary'][i]['score']
               a.setAttribute('id', 'search_' + i)
               a.setAttribute('class', 'search_res');
               ['click', 'contextmenu'].forEach(function (e) {
@@ -224,8 +233,10 @@
             b = document.createElement('br');
             result_section.appendChild(b);
             p = document.createElement('p');
-            // p.innerHTML = 'test2';
-            p.innerHTML = data['snippets'][i];
+            if (data['result_type'][i] === "piazza") {
+              p.classList.add('piazza-link-text');
+            }
+            p.innerHTML += data['snippets'][i];
             result_section.appendChild(p);
           }
         },
@@ -237,6 +248,9 @@
   });
 
   $(document).ready(function () {
+    if("{{slide_content}}" === "1") {
+      return;
+    }
     $.ajax({
       type: "POST",
       url: "/rank_piazza",
@@ -246,8 +260,7 @@
         var elem = $("#related-piazza");
         var content = "<ul>";
         for(var it in data.documents){
-          // TODO: fix class hardcoding;
-          content += `<li><a href="https://piazza.com/class/kdp8arjgvyj67l?cid=${data.documents[it].nr}">${data.documents[it].title}</a></li>`;
+          content += `<li><a href="https://piazza.com/class/${data.documents[it].class_id}?cid=${data.documents[it].nr}" target="_blank">${data.documents[it].title}</a></li>`;
           if(it >= 3)
             break;
         }

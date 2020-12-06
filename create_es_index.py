@@ -29,6 +29,10 @@ def gendata_piazza(items):
                 "nr": item.get("nr"),
                 "content": item.get("post"),
                 "title": item.get("title"),
+                "endorsements": item.get("endorsements"),
+                "instructor_answer": item.get("instructor_answer"),
+                "student_answer": item.get("student_answer"),
+                "class_id": item.get("class_id"),
             },
         }
 
@@ -71,14 +75,14 @@ def main():
 
 
 def create_index_dataset(post):
-
-    content = f"{post.get('title')} {post.get('post')}"
-    with open(f"./piazza/index/{post.get('nr')}.txt", "w+") as fh:
+    content = f"{post.get('title')} {post.get('post')} {post.get('endorsements')} {post.get('instructor_answer')} {post.get('student_answer')} {post.get('class_id')}"
+    with open(f"./piazza/index/{post.get('nr')}_{post.get('class_id')}.txt", "w+") as fh:
         fh.write(content)
-    return f"{post.get('nr')}.txt"
+    return f"{post.get('nr')}_{post.get('class_id')}.txt"
 
 
 def main_piazza():
+    CLASS_PORTION_INDEX = 3
 
     # create the index folder;
     try:
@@ -93,7 +97,9 @@ def main_piazza():
 
         for file in filenames:
             path = os.path.join(dirpath, file)
+            class_id ="na"
             try:
+                class_id = path.split(os.path.sep)[CLASS_PORTION_INDEX]
                 post = open_piazza_post(path)
             except:
                 print(f"[ERROR] {path} not a valid file.")
@@ -102,6 +108,10 @@ def main_piazza():
                 "title":  post.entry.title,
                 "post": " ".join(post.entry.get_full_normalized_text()),
                 "nr": post.entry.id,
+                "endorsements": len(post.entry.get_endorsers()),
+                "instructor_answer": len(post.entry.get_answer_by_type(post.FRIENDLY_INSTRUCTOR_ANSWER_ID)) > 0,
+                "student_answer": len(post.entry.get_answer_by_type(post.FRIENDLY_STUDENT_ANSWER_ID)) > 0,
+                "class_id": class_id,
             })
             index_file = create_index_dataset(posts[-1])
             f_index.write(f"[None] {index_file}\n")
@@ -126,7 +136,11 @@ def main_piazza():
                     "properties": {
                         "nr": {"type": "integer"},
                         "content": {"type": "text"},
-                        "title": {"type": "text"}
+                        "title": {"type": "text"},
+                        "endorsements": {"type": "integer"},
+                        "instructor_answer": {"type": "boolean"},
+                        "student_answer": {"type": "boolean"},
+                        "class_id": {"type": "text"},
                     }
                 }
             },

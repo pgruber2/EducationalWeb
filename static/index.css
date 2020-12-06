@@ -90,3 +90,10 @@
   margin-bottom: 20px;
   box-shadow: 0 2px 4px rgba(0,0,0,.11);
 }
+
+.piazza-link-text {
+  text-overflow: ellipsis;
+  max-height: 40px;
+  overflow: hidden;
+  white-space: nowrap;
+}

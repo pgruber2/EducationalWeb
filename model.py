@@ -34,9 +34,6 @@ alpha = 0.34
 ranker_obj = load_ranker(cfg)
 piazza_ranker_obj = load_ranker(os.path.join(main_path, "piazza/index/"))
 
-# TODO: fix hardcoding
-piazza_path = os.path.join(main_path, "piazza/downloads/kdp8arjgvyj67l/2020_11_18")
-
 with open(cfg, "r") as fin:
     cfg_d = pytoml.load(fin)
 
@@ -379,11 +376,11 @@ def format_string(matchobj):
 
 
 def get_piazza_search_results(search):
-    posts = os.listdir(piazza_path)
     res = es.search(
         index="piazza", body={"query": {"match": {"content": search}}}, size=50
     )
 
+    supplementary = []
     type = []
     results = []
     disp_strs = []
@@ -396,9 +393,12 @@ def get_piazza_search_results(search):
         mypost = r.get("_source", {}).get("content", None)
         nr = r.get("_source", {}).get("nr", None)
         title = r.get("_source", {}).get("title", None)
+        endorsements = r.get("_source", {}).get("endorsements", None)
+        instructor_answer = r.get("_source", {}).get("instructor_answer", None)
+        student_answer = r.get("_source", {}).get("student_answer", None)
+        score = r.get("_score", 0.0)
 
-        # TODO: Correctly index posts
-        target_post = [x for x in posts if x.startswith("post_"+str(nr)+"_")][0]
+        supplementary.append({"title": title, "endorsements": endorsements, "instructor_answer": instructor_answer, "student_answer": student_answer, "score": score})
 
         results.append(nr)
 
@@ -408,14 +408,14 @@ def get_piazza_search_results(search):
             continue
 
         disp_strs.append(title)
-        # TODO: Fix hardcoding
-        course_names.append('kdp8arjgvyj67l')
-        lec_names.append("what goes get...It is a txt file orig")
+
+        course_names.append(r.get("_source", {}).get("class_id", "na"))
+        lec_names.append("Not Used")
 
         snippets.append(mypost)
         type.append("piazza")
 
-    return len(results), results, disp_strs, course_names, lnos, snippets, lec_names, type
+    return len(results), results, disp_strs, course_names, lnos, snippets, lec_names, type, supplementary
 
 
 def get_search_results(search):
@@ -425,22 +425,27 @@ def get_search_results(search):
     # top_docs = ranker.score(idx, query, num_results=50)
     # top_docs = [slide_titles[x[0]] for x in top_docs]
     top_docs = []
+    scores = []
     res = es.search(
         index="slides", body={"query": {"match": {"content": search}}}, size=50
     )
     # print(res)
     for d in res["hits"]["hits"]:
         top_docs.append(d[u"_source"][u"label"])
+        scores.append(d[u"_score"])
 
     results = []
     disp_strs = []
     course_names = []
     snippets = []
     lnos = []
+    supplementary = []
     type = []
     top_slide_trim_names = []
     lec_names = []
+    index = -1
     for r in top_docs:
+        index += 1
         comp = r.split("##")
         try:
             lectures = sort_slide_names(os.listdir(os.path.join(slides_path, comp[0])))
@@ -468,12 +473,13 @@ def get_search_results(search):
                 results.append(r)
                 snippets.append(get_snippet_sentences(r, search))
                 type.append("slide")
+                supplementary.append({"score": scores[index]})
         except OSError:
             print("Could not load slide:", comp[0], r)
 
     for x in range(len(results)):
         results[x] = results[x].replace("##", "----") + ".pdf"
-    return len(results), results, disp_strs, course_names, lnos, snippets, lec_names, type
+    return len(results), results, disp_strs, course_names, lnos, snippets, lec_names, type, supplementary
 
 
 def get_explanation(search_string, top_k=1, ranker="explaination"):
@@ -500,7 +506,7 @@ def get_piazza_post(search_string, top_k=1):
 
     docs = []
     for doc in documents:
-        doc = int(doc[:doc.rfind(".")])
+        doc = int(doc[:doc.rfind("_")])
         res = es.get(index="piazza", id=doc, doc_type="_all")
         docs.append(res.get("_source", {}))
 

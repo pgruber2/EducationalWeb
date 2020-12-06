@@ -508,7 +508,8 @@ def search_results(course_name=None, lno=None, slide_name=None, curr_slide=None)
         lnos,
         snippets,
         lec_names,
-        result_type
+        result_type,
+        slide_supplementary
     ) = model.get_search_results(search_string)
 
     (
@@ -519,14 +520,15 @@ def search_results(course_name=None, lno=None, slide_name=None, curr_slide=None)
         piazza_lnos,
         piazza_snippets,
         piazza_lec_names,
-        piazza_result_type
+        piazza_result_type,
+        piazza_supplementary
     ) = model.get_piazza_search_results(search_string)
 
     if not results or not piazza_results:
         num_results = 0
         results = []
 
-    response = jsonify(
+    response = jsonify(result_sorter(
         {
             "num_results": num_results + piazza_num_results,
             "results": results + piazza_results,
@@ -537,11 +539,34 @@ def search_results(course_name=None, lno=None, slide_name=None, curr_slide=None)
             "num_courses": NUM_COURSES,
             "snippets": snippets + piazza_snippets,
             "lec_names": lec_names + piazza_lec_names,
-            "result_type": result_type + piazza_result_type
+            "result_type": result_type + piazza_result_type,
+            "supplementary": slide_supplementary + piazza_supplementary
         }
-    )
+    ))
     return response
 
+def result_sorter(results):
+    scores = []
+    for index, result in enumerate(results['supplementary']):
+        scores.append({'index': index, 'score': result['score']})
+
+    sorted_scores = sorted(scores, key=lambda k: k['score'], reverse=True)
+
+    TO_MIGRATE = ["results", "disp_strs", "search_course_names", "lnos", "snippets", "lec_names", "result_type", "supplementary"]
+    toReturn = {
+        "num_results": results["num_results"],
+        "course_names": results["course_names"],
+        "num_courses": results["num_courses"]
+    }
+
+    for field in TO_MIGRATE:
+        toReturn[field] = []
+
+    for result in sorted_scores:
+        for field in TO_MIGRATE:
+            toReturn[field].append(results[field][result['index']])
+
+    return toReturn
 
 def log_helper(action, route):
     if action is not None and route is not None:
